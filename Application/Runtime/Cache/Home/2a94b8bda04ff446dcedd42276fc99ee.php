@@ -18,8 +18,34 @@
     <![endif]-->
 </head>
 <body class="fw">
+    <section class="index_xf">
+        <?php $_result=get_lists(20, '', 3);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><div class="index_xf1">
+                <div class="index_xfnr1">
+                    <img src="/Public/Home/images/xftb1.png" height="37" width="39"><?php echo ($val['title']); ?>
+                </div>
+                <div class="index_xfnr2 fix">
+                    <div class="index_xfnr2l fl">
+                        <img src="/Public/Home/images/xftb1.png" width="48">
+                    </div>
+                    <div class="index_xfnr2r fr">
+                        <?php echo ($val['title']); ?>
+                        <span><?php echo array_shift(explode(' ', $val['extends']['field_1']));?></span>
+                    </div>
+                </div>
+            </div><?php endforeach; endif; else: echo "" ;endif; ?>
+        <a href="<?php echo ($CATEGORYS[20]['url']); ?>" class="index_xf1">
+            <div class="index_xfnr1">
+                <img src="/Public/Home/images/xftb2.png" height="37" width="39">在线咨询
+            </div>
+        </a>
+        <a href="javascript:void(0);" class="index_xf1">
+            <div class="index_xfnr1">
+                <img src="/Public/Home/images/xftb3.png" height="37" width="39">vip服务
+            </div>
+        </a>
+    </section>
     <section class="top xz1">
-        <img src="/Public/Home/images/jiantou.png" height="29" width="52" class="jiantou">
+        <img src="/Public/Home/images/light_xinjiajian.png" class="jiantou">
         <div id="slideBox" class="slideBox">
             <div class="hd">
                 <ul>
@@ -107,27 +133,27 @@
             </article>
             <section class="liucmain fw fix">
                 <section class="lck fl trans">
-                    <header class="lckbt">前期沟通与策划方案</header>
+                    <header class="lckbt">深入沟通与专业策划</header>
                     <article>
-                        由专业的客户经理与您对接和梳理前期的项目和需求，并为您提供专业实惠的报价方案...
+                        前期由专业的客户经理针对您的网站功能需求进行深入的分析，并提出专业可实施的网站建设解决方案。
                     </article>
                 </section>
                 <section class="lck fl trans">
                     <header class="lckbt">精心原创的设计方案</header>
                     <article>
-                        由专业的网页设计师根据您的意向和需求提供专业的设计方案，并进行合理的优化和建议...
+                        行业资深的网页设计师根据您的意向需求，进行原创设计，用设计提升产品和企业价值。
                     </article>
                 </section>
                 <section class="lck fl trans">
-                    <header class="lckbt">严谨的前段制作</header>
+                    <header class="lckbt">严谨规范的前端制作</header>
                     <article>
-                        前端工程师制作标准优化的代码，并增加交互动态功能，致力于通过技术改善用户体验...
+                        最新的H5代码规范编写，使您的网站更易于优化，多终端兼容，生动形象的动画交互，增强用户体验。
                     </article>
                 </section>
                 <section class="lck fl trans">
-                    <header class="lckbt">后端开发测试上线</header>
+                    <header class="lckbt">后端工程师定制开发</header>
                     <article>
-                        后端程序工程师为您的项目需求自主开发使用后台，并经过严格的测试环节最终交付网站产品...
+                        根据您的网站项目需求量身定制开发后台，严格的测试，后台操作培训，最终交付给客户产品使用上线。
                     </article>
                 </section>
             </section>
@@ -140,13 +166,13 @@
             <section class="zhinanmain fw fix">
                 <section class="znk fl trans">
                     <img src="/Public/Home/images/xtb1.png" height="44" width="46">
-                    <header class="znkbt">友好的搜索引擎</header>
-                    <article class="znkxx">Search engine friendly</article>
+                    <header class="znkbt">良好的搜索引擎</header>
+                    <article class="znkxx">Good search engine</article>
                 </section>
                 <section class="znk fl trans">
                     <img src="/Public/Home/images/xtb2.png" height="44" width="46">
-                    <header class="znkbt">自主开发后台</header>
-                    <article class="znkxx">Background development</article>
+                    <header class="znkbt">定制化自主开发</header>
+                    <article class="znkxx">Customized self development</article>
                 </section>
                 <section class="znk fl trans">
                     <img src="/Public/Home/images/xtb3.png" height="44" width="46">
@@ -182,6 +208,7 @@
     <section class="team wb light_indexbj">
         <section class="teamnr">
             <section class="team1">
+                <img src="/Public/Home/images/tdtpz.png" height="203" width="719" class="tdtpz">
                 <section class="teamsec1 fix">
                 <?php $_result=get_banner(2, 96);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><a href="javascript:void(0);"><img src="<?php echo thumb($val['image'],300,300);?>" class="trans4"></a><?php endforeach; endif; else: echo "" ;endif; ?>
                 </section>
@@ -189,37 +216,23 @@
                     <header class="servbt fw tc trans">我们的团队</header>
                     <article class="servnr1 tc pt5 trans">
                         <img src="/Public/Home/images/wztp5.png">
-                        <img src="/Public/Home/images/tdtpz.png" height="203" width="719" class="tdtpz">
+
                     </article>
                 </section>
             </section>
         </section>
     </section>
-    <footer class="wb footer">
+    <footer class="wb footer footerts">
     <section class="footertop">
         <section class="footertop1 w">
             <section class="footertop11  ovh fix">
-                <div class="footert1 fl">
+			<?php $_result=get_lists(20, '', 3);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><div class="footert1 fl">
                     <img src="/Public/Home/images/phone.png" height="49" width="49" class="fl">
                     <div class="fl">
-                        <span>海淀运营中心咨询热线：</span>
-                        010-51654300
+                        <span><?php echo ($val['title']); ?>咨询热线：</span>
+                        <?php echo array_shift(explode(' ', $val['extends']['field_1']));?>
                     </div>
-                </div>
-                <div class="footert1 fl">
-                    <img src="/Public/Home/images/phone.png" height="49" width="49" class="fl">
-                    <div class="fl">
-                        <span>丰台运营中心咨询热线：</span>
-                        010-51654321
-                    </div>
-                </div>
-                <div class="footert1 fl">
-                    <img src="/Public/Home/images/phone.png" height="49" width="49" class="fl">
-                    <div class="fl">
-                        <span>朝阳运营中心咨询热线：</span>
-                        010-51654311
-                    </div>
-                </div>
+                </div><?php endforeach; endif; else: echo "" ;endif; ?>
             </section>
         </section>
     </section>
