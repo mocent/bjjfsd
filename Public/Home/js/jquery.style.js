@@ -15,9 +15,11 @@ $(document).ready(function(){
 
     //招聘弹框
     $('.showInBg').click(function(){
+        var dataTag = $(this).find("data");
+        $("#InBg .z-title").html(dataTag.attr("value"));
+        $("#InBg .mr30").html(dataTag.html());
         showInBg()
     })
-
 
     //-----------------W.
     //联系我们搜索
@@ -87,7 +89,8 @@ $(document).ready(function(){
 function y_select(select) {
     for (var i = 0; i < select.length; i++) {
         select.eq(i).find("input").attr("value", select.eq(i).find(".selected").attr("title"));
-        var txt = select.eq(i).find(".selected a").html();
+        // var txt = select.eq(i).find(".selected a").html();
+        var txt = select.eq(0).find("a").html();
         if (txt == null) txt = "网站建设";
         select.eq(i).find("span").html(txt);
     }
@@ -100,8 +103,8 @@ function y_select(select) {
         $(this).fadeIn(0);
     });
 
-    $(".y_select ul").mouseout(function (event) {
-        $(this).fadeOut(1);
+    $(".y_select").mouseout(function (event) {
+        $(this).find("ul").fadeOut(1);
     });
 
     $(".y_select .option").click(function (event) {
