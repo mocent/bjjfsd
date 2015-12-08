@@ -9,13 +9,18 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#dowebok').fullpage({
-                anchors: ['page1', 'page2', 'page3', 'page4','page5'],
+                anchors: ['page1', 'page2', 'page3', 'page4','page5','page6'],
                 menu: '#special-menu'
             });
         });
     </script>
 </block>
 <block name="main">
+    <ul class="xjul">
+		<volist name=":get_category(1)" id="val">
+	    	<li><a href="{$val['url']}" target="_blank"><img src="__IMG__xjtb{$i}.png" class="light_img1"><img src="__IMG__xjtb{$i}{$i}.png" class="light_img2"></a></li>
+		</volist>
+	</ul>
 	<ul id="special-menu">
         <li data-menuanchor="page1" class="active"><a href="#page1">&nbsp;</a></li>
         <li data-menuanchor="page2"><a href="#page2">&nbsp;</a></li>
@@ -24,112 +29,113 @@
         <li data-menuanchor="page5"><a href="#page5">&nbsp;</a></li>
         <!--<li data-menuanchor="page6"><a href="#page6">&nbsp;</a></li>-->
     </ul>
-	<div id="dowebok">
-	    <div class="section y_s1">
-	        <div class="center-wrap">
-	            <div class="y_q01">
-	                <img src="__IMG__y_zi03.png" class="y_mmg">
-	                <span>高档衣服需要定制  /  高档家具需要定制  /  高档网站更需要定制
-	定制型网站，再也不担心自己的网站与别人“撞衫”。</span>
-	                <a href="{$CATEGORYS[20][url]}"><span>定制咨询</span></a>
-	            </div>
-	        </div>
-	    </div>
-	    <div class="section y_s2">
-	        <div class="center-wrap">
-	            <div class="y_q02 fl">
-	                <img src="__IMG__yqzi_01.png" class="yq_mg1">
-	                <img src="__IMG__yqzi_02.png" class="yq_mg2">
-	                <span>着眼行业，分析受众，互联网＋时代，追求良好的浏览体验。
-	设计最适合用户的网站页面。</span>
-	                <a href="{$CATEGORYS[20][url]}"><span>定制咨询</span></a>
-	            </div>
-	            <div class="yq_mg3 fr">
-	                <img src="__IMG__y_11.png">
-	            </div>
-	        </div>
-	    </div>
-	    <div class="section y_s3">
-	        <div class="center-wrap">
-	            <div class="y_q04 fr m0">
-	                <img src="__IMG__yqzi_03.png" class="yq_mg4">
-	                <img src="__IMG__yqzi_04.png" class="yq_mg5">
-	                <span>受喜爱还受保护，被山寨有权力ko对方。暗爽！</span>
-	                <a href="{$CATEGORYS[20][url]}"><span>定制咨询</span></a>
-	            </div>
-	        </div>
-	    </div>
-	    <div class="section y_s4">
-	        <div class="center-wrap fix" style="height:510px;">
-	            <div class="y_q03 fl">
-	                <img src="__IMG__yqzi_05.png" class="yq_mg6">
-	                <div class="y_divv fix">
-	                     <img src="__IMG__yqzi_06.png" class="yq_mg7">
-	                     <img src="__IMG__yqzi_07.png" class="yq_mg8">
-	                </div>
-	                <div class="y_divv2 fix">
-	                     <img src="__IMG__yqzi_08.png" class="yq_mg9">
-	                     <img src="__IMG__yqzi_09.png" class="yq_mg10">
-	                 </div>
-	                <span>着眼行业，分析受众，互联网＋时代，追求良好的浏览体验。
-	设计最适合用户的网站页面。</span>
-	                <a href="{$CATEGORYS[20][url]}"><span>定制咨询</span></a>
-	            </div>
-	            <img src="__IMG__y_12.png" class="fr y_mar">
-	        </div>
-	    </div>
-	    <div class="section y_s5">
-	         <div class="center-wrap">
-	            <ul class="fix y_ul1">
-	                <li>
-	                    <div class="y_lis">
-	                        <img src="__IMG__ytip_01.png">
-	                        鲜明的展示主题
-	                    </div>
-	                    <ol class="fix fs y_ol1">
-	                        <li>网页设计作为一种视觉语言，非常讲究编排和布局，主页的设计不等同于平面设计，并且因为需要考虑到加载速度的问题，设计要求更高于平面设计。</li>
-	                        <li>版式设计可通过文字图形的空间组合，表达出和谐与美。</li>
-	                        <li>多页面站点页面的编排设计要求把页面之间的有机联系反映出来，<span>特别要求处理好页面之间和页面内的秩序与内容的关系。</span>为了达到最佳的视觉表现效果，金方时代的设计师将反复推敲整体布局的合理性，使浏览者有一个流畅的视觉体验。</li>
-	                    </ol>
-	                </li>
-	                <li>
-	                    <div class="y_lis">
-	                        <img src="__IMG__ytip_02.png">
-	                        版式设计传达和谐之美
-	                    </div>
-	                    <ol class="fix fs y_ol1">
-	                        <li>网页设计作为一种视觉语言，非常讲究编排和布局，主页的设计不等同于平面设计，并且因为需要考虑到加载速度的问题，设计要求更高于平面设计。</li>
-	                        <li>版式设计可通过文字图形的空间组合，表达出和谐与美。</li>
-	                        <li>多页面站点页面的编排设计要求把页面之间的有机联系反映出来，<span>特别要求处理好页面之间和页面内的秩序与内容的关系。</span>为了达到最佳的视觉表现效果，金方时代的设计师将反复推敲整体布局的合理性，使浏览者有一个流畅的视觉体验。</li>
-	                    </ol>
-	                </li>
-	                <li>
-	                    <div class="y_lis">
-	                        <img src="__IMG__ytip_03.png">
-	                        色彩的作用
-	                    </div>
-	                    <ol class="fix fs y_ol1">
-	                        <li>网页设计作为一种视觉语言，非常讲究编排和布局，主页的设计不等同于平面设计，并且因为需要考虑到加载速度的问题，设计要求更高于平面设计。</li>
-	                        <li>版式设计可通过文字图形的空间组合，表达出和谐与美。</li>
-	                        <li>多页面站点页面的编排设计要求把页面之间的有机联系反映出来，<span>特别要求处理好页面之间和页面内的秩序与内容的关系。</span>为了达到最佳的视觉表现效果，金方时代的设计师将反复推敲整体布局的合理性，使浏览者有一个流畅的视觉体验。</li>
-	                    </ol>
-	                </li>
-	                <li>
-	                    <div class="y_lis">
-	                        <img src="__IMG__ytip_04.png">
-	                        形式内容
-	                    </div>
-	                    <ol class="fix fs y_ol1">
-	                        <li>网页设计作为一种视觉语言，非常讲究编排和布局，主页的设计不等同于平面设计，并且因为需要考虑到加载速度的问题，设计要求更高于平面设计。</li>
-	                        <li>版式设计可通过文字图形的空间组合，表达出和谐与美。</li>
-	                        <li>多页面站点页面的编排设计要求把页面之间的有机联系反映出来，<span>特别要求处理好页面之间和页面内的秩序与内容的关系。</span>为了达到最佳的视觉表现效果，金方时代的设计师将反复推敲整体布局的合理性，使浏览者有一个流畅的视觉体验。</li>
-	                    </ol>
-	                </li>
-	            </ul>
-	        </div>
-	    </div>
-	    <div class="section fp-auto-height">
+
+    <div id="dowebok">
+        <div class="section y_s1">
+            <div class="center-wrap">
+                <div class="y_q01">
+                    <img src="__IMG__y_zi03.png" class="y_mmg">
+                    <span>高档衣服需要定制  /  高档家具需要定制  /  高档网站更需要定制
+    定制型网站，再也不担心自己的网站与别人“撞衫”。</span>
+                    <a href="#"><span>定制咨询</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="section y_s2">
+            <div class="center-wrap">
+                <div class="y_q02 fl">
+                    <img src="__IMG__yqzi_01.png" class="yq_mg1">
+                    <img src="__IMG__yqzi_02.png" class="yq_mg2">
+                    <span>着眼行业，分析受众，互联网＋时代，追求良好的浏览体验。
+    设计最适合用户的网站页面。</span>
+                    <a href="#"><span>定制咨询</span></a>
+                </div>
+                <div class="yq_mg3 fr">
+                    <img src="__IMG__y_11.png">
+                </div>
+            </div>
+        </div>
+        <div class="section y_s3">
+            <div class="center-wrap">
+                <div class="y_q04 fr m0">
+                    <img src="__IMG__yqzi_03.png" class="yq_mg4">
+                    <img src="__IMG__yqzi_04.png" class="yq_mg5">
+                    <span>受喜爱还受保护，被山寨有权力ko对方。暗爽！</span>
+                    <a href="#"><span>定制咨询</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="section y_s4">
+            <div class="center-wrap">
+                <div class="y_q03 fl">
+                    <img src="__IMG__yqzi_05.png" class="yq_mg6">
+                    <div class="y_divv fix">
+                         <img src="__IMG__yqzi_06.png" class="yq_mg7">
+                         <img src="__IMG__yqzi_07.png" class="yq_mg8">
+                    </div>
+                    <div class="y_divv2 fix">
+                         <img src="__IMG__yqzi_08.png" class="yq_mg9">
+                         <img src="__IMG__yqzi_09.png" class="yq_mg10">
+                     </div>
+                    <span>着眼行业，分析受众，互联网＋时代，追求良好的浏览体验。
+    设计最适合用户的网站页面。</span>
+                    <a href="#"><span>定制咨询</span></a>
+                </div>
+                <img src="__IMG__y_12.png" class="fr y_mar">
+            </div>
+        </div>
+        <div class="section y_s5">
+             <div class="center-wrap">
+                <ul class="fix y_ul1">
+                    <li>
+                        <div class="y_lis">
+                            <img src="__IMG__ytip_01.png">
+                            鲜明的展示主题
+                        </div>
+                        <ol class="fix fs y_ol1">
+                            <li>网页设计作为一种视觉语言，非常讲究编排和布局，主页的设计不等同于平面设计，并且因为需要考虑到加载速度的问题，设计要求更高于平面设计。</li>
+                            <li>版式设计可通过文字图形的空间组合，表达出和谐与美。</li>
+                            <li>多页面站点页面的编排设计要求把页面之间的有机联系反映出来，<span>特别要求处理好页面之间和页面内的秩序与内容的关系。</span>为了达到最佳的视觉表现效果，金方时代的设计师将反复推敲整体布局的合理性，使浏览者有一个流畅的视觉体验。</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <div class="y_lis">
+                            <img src="__IMG__ytip_02.png">
+                            版式设计传达和谐之美
+                        </div>
+                        <ol class="fix fs y_ol1">
+                            <li>网页设计作为一种视觉语言，非常讲究编排和布局，主页的设计不等同于平面设计，并且因为需要考虑到加载速度的问题，设计要求更高于平面设计。</li>
+                            <li>版式设计可通过文字图形的空间组合，表达出和谐与美。</li>
+                            <li>多页面站点页面的编排设计要求把页面之间的有机联系反映出来，<span>特别要求处理好页面之间和页面内的秩序与内容的关系。</span>为了达到最佳的视觉表现效果，金方时代的设计师将反复推敲整体布局的合理性，使浏览者有一个流畅的视觉体验。</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <div class="y_lis">
+                            <img src="__IMG__ytip_03.png">
+                            色彩的作用
+                        </div>
+                        <ol class="fix fs y_ol1">
+                            <li>网页设计作为一种视觉语言，非常讲究编排和布局，主页的设计不等同于平面设计，并且因为需要考虑到加载速度的问题，设计要求更高于平面设计。</li>
+                            <li>版式设计可通过文字图形的空间组合，表达出和谐与美。</li>
+                            <li>多页面站点页面的编排设计要求把页面之间的有机联系反映出来，<span>特别要求处理好页面之间和页面内的秩序与内容的关系。</span>为了达到最佳的视觉表现效果，金方时代的设计师将反复推敲整体布局的合理性，使浏览者有一个流畅的视觉体验。</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <div class="y_lis">
+                            <img src="__IMG__ytip_04.png">
+                            形式内容
+                        </div>
+                        <ol class="fix fs y_ol1">
+                            <li>网页设计作为一种视觉语言，非常讲究编排和布局，主页的设计不等同于平面设计，并且因为需要考虑到加载速度的问题，设计要求更高于平面设计。</li>
+                            <li>版式设计可通过文字图形的空间组合，表达出和谐与美。</li>
+                            <li>多页面站点页面的编排设计要求把页面之间的有机联系反映出来，<span>特别要求处理好页面之间和页面内的秩序与内容的关系。</span>为了达到最佳的视觉表现效果，金方时代的设计师将反复推敲整体布局的合理性，使浏览者有一个流畅的视觉体验。</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section fp-auto-height">
 			<include file="Public/footer" />
-	    </div>
-	</div>
+        </div>
+    </div>
 </block>

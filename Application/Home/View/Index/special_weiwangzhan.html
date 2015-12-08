@@ -8,19 +8,54 @@
 	<script src="__JS__jquery-1.9.1.min.js"></script>
     <script src="__JS__jquery.fullPage.js"></script>
     <script src="__JS__jquery.style.js"></script>
-    <script type="text/javascript">
+	<script type="text/javascript">
         $(document).ready(function() {
 
             $('#dowebok').fullpage({
                 anchors: ['page1', 'page2', 'page3', 'page4','page5'],
                 menu: '#special-menu',
-                verticalCentered: !1
+                verticalCentered: !1,
+                onLeave: function(index, nextIndex, direction){
+                    var leavingSection = $(this);
+
+                    //after leaving section 2
+
+                    if(index == 5 && direction =='down'){
+                        if($('.footer').hasClass('xz')){
+                            return false;
+                        }
+                        else{
+                            $('.footer').addClass('xz');
+                            $('.w-web-05 .wrap-height').animate({'margin-top':'-367px'},500);
+                            $('.footer').animate({bottom:'0px'},500);
+                            return false;
+                        }
+
+                    }
+                    else if(index == 5 && direction == 'up'){
+                        if($('.footer').hasClass('xz')){
+
+                            $('.w-web-05 .wrap-height').animate({'margin-top':'0px'},500);
+                            $('.footer').animate({bottom:'-380px'},500,function(){
+                                $('.footer').removeClass('xz');
+                            });
+                            return false;
+                        }
+
+
+                    }
+                }
 
             });
         });
     </script>
 </block>
 <block name="main">
+	<ul class="xjul">
+		<volist name=":get_category(1)" id="val">
+	    	<li><a href="{$val['url']}" target="_blank"><img src="__IMG__xjtb{$i}.png" class="light_img1"><img src="__IMG__xjtb{$i}{$i}.png" class="light_img2"></a></li>
+		</volist>
+	</ul>
     <ul id="special-menu">
         <li data-menuanchor="page1" class="active"><a href="#page1">&nbsp;</a></li>
         <li data-menuanchor="page2"><a href="#page2">&nbsp;</a></li>
@@ -106,32 +141,35 @@
                         <p>平均每天有两家公司选择与我们合作！</p>
                     </div>
                     <div class="main-form fr abs">
-                        <div class="fix mb15">
-                            <input type="text" name="" class="inp-01 fl"/>
-                            <span class="abs t-s">您的网址：</span>
-                        </div>
-                        <div class="fix mb15">
-                            <input type="text" name="" class="inp-01 fl"/>
-                            <span class="abs t-s">联系人：</span>
-                        </div>
-                        <div class="fix mb15">
-                            <input type="text" name="" class="inp-01 fl"/>
-                            <span class="abs t-s">联系电话：</span>
-                        </div>
-                        <div class="fix mb15">
-                            <input type="text" name="" class="inp-01 fl"/>
-                            <span class="abs t-s">邮箱：</span>
-                        </div>
-                        <div class="fix">
-                            <input type="submit" name="" value="提交" class="btn-s btn-01 fl" />
-                            <input type="reset" name="" value="重置" class="btn-s btn-02 fl ml10" />
-                        </div>
+						<form action="{:U('Index/message')}" method="post">
+	                        <div class="fix mb15">
+	                            <input type="text" name="zhuti" class="inp-01 fl"/>
+	                            <span class="abs t-s">您的网址：</span>
+	                        </div>
+	                        <div class="fix mb15">
+	                            <input type="text" name="title" class="inp-01 fl"/>
+	                            <span class="abs t-s">联系人：</span>
+	                        </div>
+	                        <div class="fix mb15">
+	                            <input type="text" name="tel" class="inp-01 fl"/>
+	                            <span class="abs t-s">联系电话：</span>
+	                        </div>
+	                        <div class="fix mb15">
+	                            <input type="text" name="content" class="inp-01 fl"/>
+	                            <span class="abs t-s">邮箱：</span>
+	                        </div>
+	                        <div class="fix">
+								<input type="hidden" name="type" value="wechat">
+	                            <input type="submit" name="" value="提交" class="btn-s btn-01 fl" />
+	                            <input type="reset" name="" value="重置" class="btn-s btn-02 fl ml10" />
+	                        </div>
+						</form>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="section fp-auto-height">
             <include file="Public/footer" />
         </div>
+		<div class="section light-marketing-08 fp-auto-height" style="height:1px;">
+    	</div>
     </div>
 </block>

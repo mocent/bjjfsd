@@ -58,6 +58,11 @@
     </script>
 </block>
 <block name="main">
+	<ul class="xjul">
+		<volist name=":get_category(1)" id="val">
+	    	<li><a href="{$val['url']}" target="_blank"><img src="__IMG__xjtb{$i}.png" class="light_img1"><img src="__IMG__xjtb{$i}{$i}.png" class="light_img2"></a></li>
+		</volist>
+	</ul>
     <ul id="special-menu">
         <li data-menuanchor="page1" class="active"><a href="#page1">&nbsp;</a></li>
         <li data-menuanchor="page2"><a href="#page2">&nbsp;</a></li>

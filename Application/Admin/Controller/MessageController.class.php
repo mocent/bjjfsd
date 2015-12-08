@@ -24,10 +24,13 @@ class MessageController extends AController {
     public function index(){
 
         $map = array();
+        $type = I('type', 'default', 'trim');
+        $map['type'] = $type;
+        $this->assign('type', $type);
         $list = $this->lists($this->type, $map, 'id desc');
         $this->assign('list', $list);
         $this->meta_title = $this->title . '列表';
-        $this->display();
+        $this->display('index_' . $type);
     }
 
     /* 修改 */
@@ -40,7 +43,7 @@ class MessageController extends AController {
             $this->assign('info', $info);
         }
         $this->meta_title = '更新' . $this->title;
-        $this->display();
+        $this->display('show_' . $info['type']);
     }
 
     /*  删除 */

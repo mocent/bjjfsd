@@ -93,6 +93,7 @@ function y_select(select) {
         var txt = select.eq(0).find("a").html();
         if (txt == null) txt = "网站建设";
         select.eq(i).find("span").html(txt);
+        $("#ShowType").val(txt);
     }
 
     $(".y_select span").click(function (event) {

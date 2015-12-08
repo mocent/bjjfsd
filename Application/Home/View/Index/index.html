@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="__CSS__index.css" />
     <script src="__JS__jquery-1.9.1.min.js"></script>
     <script language="javascript" src="__JS__js.js"></script>
-    <script language="javascript" src="__JS__lanrentuku.js"></script>
-    <script type="text/javascript" src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+    <script language="javascript" src="__JS__index_banner.js"></script>
     <!--[if lt IE 9]>
     <script src="__JS__html5shiv.min.js"></script>
     <script src="__JS__respond.min.js"></script>
@@ -48,19 +47,30 @@
     </section>
     <section class="top xz1">
         <img src="__IMG__light_xinjiajian.png" class="jiantou">
-        <div id="slideBox" class="slideBox">
-            <div class="hd">
-                <ul>
-                    <volist name=":get_banner(1)" id="val">
-                        <li></li>
-                    </volist>
-                </ul>
+        <div class="index_banner ovh">
+            <div class="index_b" style="position:relative;">
+                <div class="ind_b ind_b1">
+                    <div class="ind_b1nr">
+                        <img src="__IMG__diannao1.png" class="ind1tp1">
+                        <img src="__IMG__ind1tp1.jpg" class="ind1tp2">
+                        <img src="__IMG__ind1tp2.png" class="ind1tp3">
+                        <img src="__IMG__ind1tp3.png" class="ind1tp4">
+                        <img src="__IMG__ind1tp4.png" class="ind1tp5">
+                        <img src="__IMG__ind1tp5.png" class="ind1tp6">
+                    </div>
+                </div>
+                <div class="ind_b ind_b2"></div>
+                <div class="ind_b ind_b3"></div>
+                <div class="ind_b ind_b4"></div>
+                <div class="ind_b ind_b5"></div>
             </div>
-            <div class="bd">
+            <div class="index_bnav">
                 <ul>
-                    <volist name=":get_banner(1)" id="val">
-                        <li><a href="{$val['url']}"><img src="{:thumb($val['image'])}" /></a></li>
-                    </volist>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 </ul>
             </div>
         </div>
@@ -176,7 +186,7 @@
     </section>
     <section class="jianzhan wb light_indexbj">
         <section class="w">
-            <h3 class="jzbt trans db auto tc">建站指南</h3>
+            <h3 class="jzbt trans db auto tc"><a href="{$CATEGORYS[19]['url']}">{$CATEGORYS[19]['title']}</a></h3>
             <section class="zhinanmain fw fix">
                 <section class="znk fl trans">
                     <img src="__IMG__xtb1.png" height="44" width="46">

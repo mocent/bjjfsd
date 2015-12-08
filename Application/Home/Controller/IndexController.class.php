@@ -285,18 +285,132 @@ class IndexController extends IController {
     /* 在线留言 */
     public function message() {
         if (IS_POST) {
-            $model = D('Message');
-            if ($model->input()) {
-                $this->success('留言成功');
+            $type = I('type', 'default', 'trim');
+            $Message = M('Message');
+            switch ($type) {
+                case 'shouji':      //手机专题表单
+                    $validate = array(
+                         array('type','require','留言类型必须！',1),
+                         array('zhuti','require','留言主题必须！',1),
+                         array('title','require','客户姓名必须！',1),
+                         array('tel','require','留言主题必须！',1),
+                         array('content','require','留言主题必须！',1)
+                    );
+                    if (!$Message->validate($validate)->create()){
+                         $this->error($Message->getError());
+                    }else{
+                        $auto = array (
+                            array('status','1'),  // 新增的时候把status字段设置为1
+                            array('create_time','time',3,'function'),
+                            array('update_time','time',1,'function'),
+                        );
 
-            } else {
-                $this->error($model->getError());
+                        $Message->auto($auto)->create();
+                        $result = $Message->add();
+                        if ($result) {
+                            $this->success('留言成功');
+                        } else {
+                            $this->error('留言失败');
+                        }
+                    }
+                    break;
+                case 'yingxiao':    //营销型专题表单
+                    $validate = array(
+                         array('type','require','留言类型必须！',1),
+                         array('zhuti','require','您的网址必须！',1),
+                         array('title','require','联系人必须！',1),
+                         array('tel', 'require', '手机人电话必填！'),
+                         array('tel', 'check_mobile', '手机人电话格式不对！',1,'function'),
+                         array('content','require','邮箱必须！',1),
+                         array('content','email','邮箱格式不对！',1)
+                    );
+                    if (!$Message->validate($validate)->create()){
+                         $this->error($Message->getError());
+                    }else{
+                        $auto = array (
+                            array('status','1'),  // 新增的时候把status字段设置为1
+                            array('create_time','time',3,'function'),
+                            array('update_time','time',1,'function'),
+                        );
+                        $Message->auto($auto)->create();
+                        $result = $Message->add();
+                        if ($result) {
+                            $this->success('留言成功');
+                        } else {
+                            $this->error('留言失败');
+                        }
+                    }
+                    break;
+                case 'wechat':      //微网站专题表单
+                    $validate = array(
+                        array('type','require','留言类型必须！',1),
+                        array('zhuti','require','您的网址必须！',1),
+                        array('title','require','联系人必须！',1),
+                        array('tel', 'require', '手机人电话必填！'),
+                        array('tel', 'check_mobile', '手机人电话格式不对！',1,'function'),
+                        array('content','require','邮箱必须！',1),
+                        array('content','email','邮箱格式不对！',1)
+                    );
+                    if (!$Message->validate($validate)->create()){
+                         $this->error($Message->getError());
+                    }else{
+                        $auto = array (
+                            array('status','1'),  // 新增的时候把status字段设置为1
+                            array('create_time','time',3,'function'),
+                            array('update_time','time',1,'function'),
+                        );
+
+                        $Message->auto($auto)->create();
+                        $result = $Message->add();
+                        if ($result) {
+                            $this->success('留言成功');
+                        } else {
+                            $this->error('留言失败');
+                        }
+                    }
+                    break;
+
+                default:
+                    $validate = array(
+                        array('verify','check_verify','验证码错误！',1,'function'),
+                        array('title', 'require', '联系人必填!',1),
+                        array('zhuti', 'require', '类型必填！',1),
+                        array('tel', 'require', '手机人电话必填！'),
+                        array('tel', 'check_mobile', '手机人电话格式不对！',1,'function'),
+                        array('content', 'require', '内容必填！',1)
+                    );
+                    if (!$Message->validate($validate)->create()){
+                         $this->error($Message->getError());
+                    }else{
+                        $auto = array (
+                            array('status','1'),  // 新增的时候把status字段设置为1
+                            array('create_time','time',3,'function'),
+                            array('update_time','time',1,'function'),
+                            array('type','default'),
+                        );
+
+                        $Message->auto($auto)->create();
+                        $result = $Message->add();
+                        if ($result) {
+                            $this->success('留言成功');
+                        } else {
+                            $this->error('留言失败');
+                        }
+                    }
+                    break;
             }
+
+            // $model = D('Message');
+            // if ($model->input()) {
+            //     $this->success('留言成功');
+            //
+            // } else {
+            //     $this->error($model->getError());
+            // }
         } else {
             $this->display();
         }
     }
-
 
     /* 验证码 */
     public function verify(){

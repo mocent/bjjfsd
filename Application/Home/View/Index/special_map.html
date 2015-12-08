@@ -20,12 +20,12 @@
     	        <img src="__IMG__/z_tb6.png" class="db auto" />
             </div>
             <div class="z-mod5 tc">
-                <p class="mb30"><a href="./" class="a_1">网站首页</a></p>
+                <p class="mb30"><a href="{$Think.const.WEB_URL}" class="a_1">网站首页</a></p>
             <volist name=":get_category(0)" id="val">
-                <p><a href="{$val['url']}" class="a_1">{$val['title']}</a></p>
+                <p><a href="{$val['url']}" target="_blank" class="a_1">{$val['title']}</a></p>
                 <p class="mb30">
                     <volist name=":get_category($key)" id="v">
-                    <a href="{$v['url']}" class="a_2">{$v['title']}</a>
+                    <a href="{$v['url']}" target="_blank" class="a_2">{$v['title']}</a>
                     </volist>
                 </p>
             </volist>

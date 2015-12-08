@@ -2252,7 +2252,7 @@ color: #ffffff;
     bottom:0;
     left:50%;
     margin-left:-600px;
-    
+
 }
 .light_d2hengxian{position: absolute;top:4px;width:70px;border-top:solid 1px #b7b7b7;height:1px;}
 .light_d2{height:100px;width:500px;position: absolute;top:50%;margin-top:-50px;}
@@ -2313,12 +2313,12 @@ color: #ffffff;
 }
 .light_fangdaj img{display: block;}
 .light_fangdaj:after{content:'';width:72px;height:72px;border:solid 1px #fff;border-radius:100%;display: block;margin-top:-74px;
-    
+
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-    
+
     opacity:1;
 }
 
@@ -2330,7 +2330,7 @@ color: #ffffff;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
     opacity:0;
-    
+
     -webkit-transform: scale(1.5);
     -ms-transform: scale(1.5);
     -o-transform: scale(1.5);
@@ -2428,7 +2428,7 @@ color: #ffffff;
     -o-transform: translate(-50px,-50px);
     transform: translate(-50px,-50px);
     opacity:0;
-    
+
 }
 
 .active .light_dw1,.active .light_dw5,.active .light_dw9{
@@ -2448,7 +2448,7 @@ color: #ffffff;
     -o-transform: translate(-50px,50px);
     transform: translate(-50px,50px);
     opacity:0;
-    
+
 }
 
 .active .light_dw2,.active .light_dw7,.active .light_dw10{
@@ -2468,7 +2468,7 @@ color: #ffffff;
     -o-transform: translate(50px,-50px);
     transform: translate(50px,-50px);
     opacity:0;
-    
+
 }
 
 .active .light_dw3,.active .light_dw6,.active .light_dw11{
@@ -2488,7 +2488,7 @@ color: #ffffff;
     -o-transform: translate(50px,50px);
     transform: translate(50px,50px);
     opacity:0;
-    
+
 }
 
 .active .light_dw4,.active .light_dw8,.active .light_dw12{
@@ -2585,7 +2585,7 @@ color: #ffffff;
         -o-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-   
+
 }
 @-webkit-keyframes  doudong{
     0%{
@@ -2644,7 +2644,7 @@ color: #ffffff;
         -o-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-   
+
 }
 @-o-keyframes  doudong{
     0%{
@@ -2703,7 +2703,7 @@ color: #ffffff;
         -o-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-   
+
 }
 @-moz-keyframes  doudong{
      0%{
@@ -2762,7 +2762,7 @@ color: #ffffff;
         -o-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-   
+
 }
 
 
@@ -2782,7 +2782,7 @@ color: #ffffff;
     -webkit-transition: all 1.5s ease-in-out;
     -o-transition: all 1.5s ease-in-out;
     transition: all 1.5s ease-in-out;
-    
+
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
@@ -2808,7 +2808,7 @@ color: #ffffff;
  -webkit-transition: all 1.5s ease-in-out;
     -o-transition: all 1.5s ease-in-out;
     transition: all 1.5s ease-in-out;
-    
+
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
@@ -2933,8 +2933,8 @@ color: #ffffff;
 .active .light_market7lt4,
 .active .light_market7lt5,
 .active .light_market7lt6{
-    
-    
+
+
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
@@ -2973,7 +2973,7 @@ color: #ffffff;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
     position: relative;
-    
+
     opacity: 0;
     -webkit-transform:scale(.3) translateX(-500px);
     -ms-transform:scale(.3) translateX(-500px);
@@ -3001,3 +3001,21 @@ color: #ffffff;
 
 
 #dowebok .footerts{position: absolute;bottom:-385px;left:0px;}
+
+.xjul{position: fixed;top:50%;right:0px;z-index:11111;margin-top:-170px;}
+.xjul li{width:93px;height:67px;margin-top:1px;}
+.xjul li a{display: block;width:93px;height:67px;background:#d0a267;border-radius:5px 0px 0px 5px;position:relative;overflow:hidden;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+.xjul li a img.light_img1,.xjul li a img.light_img2{position: absolute;top:50%;left:50%;margin-top:-25px;margin-left:-35px;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+.xjul li a img.light_img1{display: none;}
+
+.xjul li a:hover{
+    background:#3c3c3c;
+}
