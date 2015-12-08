@@ -28,9 +28,9 @@
             <img src="__IMG__logo2.png" height="76" class="logo1" title="{:C('WEB_SITE_TITLE')}">
         </a>
         <ul class="ul fix">
-            <li class="fl"><a href="{$Think.const.WEB_URL}">首 页</a></li>
+            <li class="fl"><a href="{$Think.const.WEB_URL}" target="_blank">首 页</a></li>
 			<volist name="NAVS" id="val">
-            	<li class="fl"><a href="{$val['url']}" <eq name="val['action']" value="1">class="xz"</eq>>{:msubstr($val['title'],0,2,'utf8','')}</a></li>
+            	<li class="fl"><a href="{$val['url']}" target="_blank" <eq name="val['action']" value="1">class="xz"</eq>>{:msubstr($val['title'],0,2,'utf8','')}</a></li>
 			</volist>
         </ul>
     </nav>

@@ -139,31 +139,31 @@
             </div>
             <div class="mobile_04_nr">
                 <div class="picScroll-left">
-                    
+
                     <a class="next"><img src="__IMG__light_zuojian.png"></a>
-                    
+
                     <a class="prev"><img src="__IMG__light_youjian.png"></a>
-                       
-                   
+
+
                     <div class="bd">
                         <ul class="picList">
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                         </ul>
                     </div>
@@ -197,25 +197,26 @@
             <div class="mobile_06_nrr fr">
                 <div class="mobile_06_nrbt ml20">在线留言<span>Online message</span></div>
                 <div class="light_market7rt3">
-                    <form>
+                    <form action="{:U('Index/message')}" method="post">
                         <div class="light_form">
                             <div class="fix mb15 light_form_div">
-                                <input type="text" name="" class="inp-01"/>
+                                <input type="text" name="zhuti" class="inp-01"/>
                                 <span class="tc">留言主题：</span>
                             </div>
                             <div class="fix mb15 light_form_div">
-                                <input type="text" name="" class="inp-01"/>
+                                <input type="text" name="title" class="inp-01"/>
                                 <span class="tc">客户姓名：</span>
                             </div>
                             <div class="fix mb15 light_form_div">
-                                <input type="text" name="" class="inp-01"/>
+                                <input type="text" name="tel" class="inp-01"/>
                                 <span class="tc">联系电话：</span>
                             </div>
                             <div class="fix mb15 light_form_div1">
-                                <textarea></textarea>
+                                <textarea name="content"></textarea>
                                 <span class="tc">留言内容：</span>
                             </div>
                             <div class="fix">
+								<input type="hidden" name="type" value="shouji">
                                 <input type="submit" name="" value="提交留言" class="db light_anniu112" />
                             </div>
                         </div>

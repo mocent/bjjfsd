@@ -285,13 +285,53 @@ class IndexController extends IController {
     /* 在线留言 */
     public function message() {
         if (IS_POST) {
-            $model = D('Message');
-            if ($model->input()) {
-                $this->success('留言成功');
+            $type = I('type', 'default', 'trim');
+            $Message = M('Message');
+            switch ($type) {
+                case 'shouji':      //手机专题表单
+                    $validate = array(
+                         array('type','require','留言类型必须！',1),
+                         array('zhuti','require','留言主题必须！',1),
+                         array('title','require','客户姓名必须！',1),
+                         array('tel','require','留言主题必须！',1),
+                         array('content','require','留言主题必须！',1)
+                    );
+                    if (!$Message->validate($validate)->create()){
+                         $this->error($Message->getError());
+                    }else{
+                        $auto = array (
+                            array('status','1'),  // 新增的时候把status字段设置为1
+                            array('create_time','time',3,'function'),
+                            array('update_time','time',2,'function'),
+                        );
 
-            } else {
-                $this->error($model->getError());
+                        $data = $Message->auto($auto)->create();
+                        echo '<pre>';
+                        print_r($data);
+                        exit;
+                        $Message->add();
+                    }
+                    break;
+                case 'yingxiao':    //营销型专题表单
+
+                    break;
+                case 'wechat':      //微网站专题表单
+
+                    break;
+
+                default:
+
+
+                    break;
             }
+
+            // $model = D('Message');
+            // if ($model->input()) {
+            //     $this->success('留言成功');
+            //
+            // } else {
+            //     $this->error($model->getError());
+            // }
         } else {
             $this->display();
         }
