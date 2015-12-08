@@ -26,4 +26,8 @@ define('APP_PATH','./Application/');
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 
+<<<<<<< HEAD
 // 亲^_^ 后面不需要任何代码了 就是如此简单222
+=======
+// 亲^_^ 后面不需要任何代码了 就是如此简单111
+>>>>>>> 07619e77fad257d8460bdf96d22b0270ea875c21
