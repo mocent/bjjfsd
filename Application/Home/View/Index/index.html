@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=1200px, user-scalable=no">
+    <title>{$meta_title}</title>
+	<meta name="keywords" content="{$meta_keywords}">
+	<meta name="description" content="{$meta_description}">
+    <link rel="stylesheet" href="__CSS__common.css" />
+    <link rel="stylesheet" href="__CSS__index.css" />
+    <script src="__JS__jquery-1.9.1.min.js"></script>
+    <script language="javascript" src="__JS__js.js"></script>
+    <script language="javascript" src="__JS__lanrentuku.js"></script>
+    <script type="text/javascript" src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+    <!--[if lt IE 9]>
+    <script src="__JS__html5shiv.min.js"></script>
+    <script src="__JS__respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="fw">
+    <section class="index_xf">
+        <volist name=":get_lists(20, '', 3)" id="val">
+            <div class="index_xf1">
+                <div class="index_xfnr1">
+                    <img src="__IMG__xftb1.png" height="37" width="39">{$val['title']}
+                </div>
+                <div class="index_xfnr2 fix">
+                    <div class="index_xfnr2l fl">
+                        <img src="__IMG__xftb1.png" width="48">
+                    </div>
+                    <div class="index_xfnr2r fr">
+                        {$val['title']}
+                        <span>{:array_shift(explode(' ', $val['extends']['field_1']))}</span>
+                    </div>
+                </div>
+            </div>
+        </volist>
+        <a href="{$CATEGORYS[20]['url']}" class="index_xf1">
+            <div class="index_xfnr1">
+                <img src="__IMG__xftb2.png" height="37" width="39">在线咨询
+            </div>
+        </a>
+        <a href="javascript:void(0);" class="index_xf1">
+            <div class="index_xfnr1">
+                <img src="__IMG__xftb3.png" height="37" width="39">vip服务
+            </div>
+        </a>
+    </section>
+    <section class="top xz1">
+        <img src="__IMG__light_xinjiajian.png" class="jiantou">
+        <div id="slideBox" class="slideBox">
+            <div class="hd">
+                <ul>
+                    <volist name=":get_banner(1)" id="val">
+                        <li></li>
+                    </volist>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <volist name=":get_banner(1)" id="val">
+                        <li><a href="{$val['url']}"><img src="{:thumb($val['image'])}" /></a></li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+        jQuery(".slideBox").slide({mainCell:".bd ul",effect:"leftLoop",autoPlay:true,delayTime:500,easing:"easeOutCirc",interTime:4000});
+        </script>
+        <section class="navw xz2 trans navpos">
+            <nav class="nav auto w">
+                <a href="./" class="logo">
+                    <img src="__IMG__logo2.png" height="76" class="logo1" title="{:C('WEB_SITE_TITLE')}">
+                </a>
+                <ul class="ul fix">
+                    <li class="fl"><a href="./" class="xz">首 页</a></li>
+        			<volist name="NAVS" id="val">
+                    	<li class="fl"><a href="{$val['url']}" <eq name="val['action']" value="1">class="xz"</eq>>{:msubstr($val['title'],0,2,'utf8','')}</a></li>
+        			</volist>
+                </ul>
+            </nav>
+        </section>
+    </section>
+    <!-- top end -->
+    <section class="service wb light_indexbj">
+        <section class="service1 w">
+            <header class="servbt trans fw tc">我们的服务</header>
+            <article class="servnr1 trans tc pt5">
+                <img src="__IMG__wztp1.png">
+            </article>
+            <section class="sernr">
+                <section class="sernr11 fix">
+                <volist name=":get_category(1)" id="val">
+                    <section class="serk1 fl">
+                        <header class="serk1bt fix">
+                            <img src="__IMG__tb{$i}.png" class="fl">
+                            <section class="serkr fw fl"><span>{$val['english']}</span>{$val['title']}</section>
+                        </header>
+                        <article>{:msubstr($val['description'], 0, 40)}</article>
+                        <a href="{$val['url']}" class="serk1a trans2 mt15">查看详情</a>
+                    </section>
+                </volist>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section class="case wb light_indexbj">
+        <section class="casebj"><img src="__IMG__hsbtm.png"></section>
+        <section class="case1 w">
+            <header class="servbt trans fw tc white">我们的案例</header>
+            <article class="servnr1 trans tc pt5 white">
+                <img src="__IMG__wztp2.png">
+            </article>
+            <nav class="casenav">
+                <ul class="casenav1 fw">
+                    <volist name=":C('SERVER_LIST')" id="val">
+                        <li><a href="{:U('Index/lists', array('catid'=>2, 'server'=>$key))}">{$val}</a></li>&nbsp;
+                    </volist>
+                </ul>
+            </nav>
+        </section>
+
+    </section>
+    <section class="casemain light_indexbj">
+        <section class="casemain1 fix">
+            <volist name=":get_product_position('position_1', 0,4)" id="val">
+                <section class="casek fl trans" style="background-image:url(__IMG__tpbj{$i}.jpg);background-repeat:no-repeat;">
+                    <section class="casektp">
+                        <img src="{:thumb($val['thumb_tw'])}" height="140" width="247">
+                    </section>
+                    <header class="casekbt">{:msubstr($val['title'],0,15)}</header>
+                    <article class="caseknr">{:msubstr($val['description'],0,21)}</article>
+                    <a href="{$val['url']}" class="casekyc">
+                        <div class="fangdaj">
+                            <img src="__IMG__fangdajing.png" height="74" width="74">
+                        </div>
+                    </a>
+                </section>
+            </volist>
+        </section>
+    </section>
+    <section class="liucheng wb light_indexbj">
+        <section class="liucheng1 w">
+            <header class="servbt trans fw tc">建站流程</header>
+            <article class="servnr1 trans tc pt5">
+                <img src="__IMG__wztp3.png">
+            </article>
+            <section class="liucmain fw fix">
+                <section class="lck fl trans">
+                    <header class="lckbt">深入沟通与专业策划</header>
+                    <article>
+                        前期由专业的客户经理针对您的网站功能需求进行深入的分析，并提出专业可实施的网站建设解决方案。
+                    </article>
+                </section>
+                <section class="lck fl trans">
+                    <header class="lckbt">精心原创的设计方案</header>
+                    <article>
+                        行业资深的网页设计师根据您的意向需求，进行原创设计，用设计提升产品和企业价值。
+                    </article>
+                </section>
+                <section class="lck fl trans">
+                    <header class="lckbt">严谨规范的前端制作</header>
+                    <article>
+                        最新的H5代码规范编写，使您的网站更易于优化，多终端兼容，生动形象的动画交互，增强用户体验。
+                    </article>
+                </section>
+                <section class="lck fl trans">
+                    <header class="lckbt">后端工程师定制开发</header>
+                    <article>
+                        根据您的网站项目需求量身定制开发后台，严格的测试，后台操作培训，最终交付给客户产品使用上线。
+                    </article>
+                </section>
+            </section>
+
+        </section>
+    </section>
+    <section class="jianzhan wb light_indexbj">
+        <section class="w">
+            <h3 class="jzbt trans db auto tc">建站指南</h3>
+            <section class="zhinanmain fw fix">
+                <section class="znk fl trans">
+                    <img src="__IMG__xtb1.png" height="44" width="46">
+                    <header class="znkbt">良好的搜索引擎</header>
+                    <article class="znkxx">Good search engine</article>
+                </section>
+                <section class="znk fl trans">
+                    <img src="__IMG__xtb2.png" height="44" width="46">
+                    <header class="znkbt">定制化自主开发</header>
+                    <article class="znkxx">Customized self development</article>
+                </section>
+                <section class="znk fl trans">
+                    <img src="__IMG__xtb3.png" height="44" width="46">
+                    <header class="znkbt">无任何隐藏费用</header>
+                    <article class="znkxx">No hidden fees</article>
+                </section>
+                <section class="znk fl trans">
+                    <img src="__IMG__xtb4.png" height="44" width="46">
+                    <header class="znkbt">完善的售后服务</header>
+                    <article class="znkxx">Perfect after-sales service</article>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section class="hezuo wb light_indexbj">
+        <section class="hezuobj"><img src="__IMG__hsbtm.png"></section>
+        <section class="hezuo1 w">
+            <header class="servbt fw tc white trans">我们的客户</header>
+            <article class="servnr1 tc pt5 white trans">
+                <img src="__IMG__wztp4.png">
+            </article>
+            <a href="{:U('Index/lists', array('catid'=>18))}" class="hza tc white trans2">客户的好评</a>
+            <section class="hezuomain tc fix">
+            <volist name=":get_banner(3, 18)" id="val">
+                <a href="{$val['url']}" class="trans3">
+                    <img src="{:thumb($val['image'])}" height="132" width="199" class="img1">
+                    <img src="{:thumb($val['image2'])}" height="132" width="199" class="img2">
+                </a>
+            </volist>
+            </section>
+
+        </section>
+
+    </section>
+    <section class="team wb light_indexbj">
+        <section class="teamnr">
+            <section class="team1">
+                <img src="__IMG__tdtpz.png" height="203" width="719" class="tdtpz">
+                <section class="teamsec1 fix">
+                <volist name=":get_banner(2, 96)" id="val">
+                    <a href="javascript:void(0);"><img src="{:thumb($val['image'],300,300)}" class="trans4"></a>
+                </volist>
+                </section>
+                <section class="teamsec1nr posr">
+                    <header class="servbt fw tc trans">我们的团队</header>
+                    <article class="servnr1 tc pt5 trans">
+                        <img src="__IMG__wztp5.png">
+
+                    </article>
+                </section>
+            </section>
+        </section>
+    </section>
+    <include file="Public/footer" />
+</body>
+
+</html>

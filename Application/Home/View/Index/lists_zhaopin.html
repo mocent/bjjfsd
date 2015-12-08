@@ -1,0 +1,141 @@
+<extend name="Public/base" />
+<block name="css">
+    <link rel="stylesheet" href="__CSS__jquery.fullPage.css" type="text/css">
+    <link rel="stylesheet" href="__CSS__style.css" />
+     <link rel="stylesheet" href="__CSS__jquery.rollbar.css" />
+</block>
+<block name="js">
+    <script src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+    <script src="__JS__jquery.fullPage.js"></script>
+    <script type="text/javascript" src="__JS__jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="__JS__jquery.rollbar.min.js"></script>
+    <script src="__JS__jquery.style.js"></script>
+    <script type="text/javascript">
+        var Tool = {};
+        $(document).ready(function() {
+            $('#dowebok').fullpage({
+                anchors: ['page1', 'page2', 'page3', 'page4','page5'],
+                menu: '#special-menu'
+            });
+            $('#example').rollbar({zIndex:80});
+        });
+    </script>
+</block>
+<block name="main">
+    <ul id="special-menu">
+        <li data-menuanchor="page1" class="active"><a href="#page1">&nbsp;</a></li>
+        <li data-menuanchor="page2"><a href="#page2">&nbsp;</a></li>
+        <li data-menuanchor="page3"><a href="#page3">&nbsp;</a></li>
+        <li data-menuanchor="page4"><a href="#page4">&nbsp;</a></li>
+        <!--<li data-menuanchor="page6"><a href="#page6">&nbsp;</a></li>-->
+    </ul>
+    <div id="dowebok">
+        <div class="section recruitment-01">
+            <div class="recruitment-bg"></div>
+            <div class="center-wrap fix">
+                <div class="z-mod9 fl">
+                    <img src="__IMG__z_img4.png" class="db" />
+                    <p>一起站在互联网行业的最前沿</p>
+                </div>
+                <div class="z-mod10 fr">
+                    <img src="__IMG__z_img5.png" class="db" />
+                </div>
+            </div>
+        </div>
+        <div class="section recruitment-02">
+            <div class="center-wrap">
+                <div class="z-mod11 auto mb20"><img src="__IMG__z_img6.png" class="db" /></div>
+                <div class="z-mod12 auto mb80">
+                    <img src="__IMG__z_img7.png" class="db img_1" />
+                    <img src="__IMG__z_img8.png" class="z-pfimg1 db" />
+                    <img src="__IMG__z_img9.png" class="z-pfimg2 db" />
+                </div>
+                <div class="z-mod13">
+                    <ul class="fix">
+                        <li>
+                            <div class="img"><img src="__IMG__z_tb10.png" /></div>
+                            <div class="text">
+                                <p class="mb20">薪资 / SALARY</p>你想要的，你期望的，<br />这里都能带给你，努力<br />吧，少年！
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><img src="__IMG__z_tb11.png" /></div>
+                            <div class="text">
+                                <p class="mb20">薪资 / SALARY</p>你想要的，你期望的，<br />这里都能带给你，努力<br />吧，少年！
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><img src="__IMG__z_tb12.png" /></div>
+                            <div class="text">
+                                <p class="mb20">薪资 / SALARY</p>你想要的，你期望的，<br />这里都能带给你，努力<br />吧，少年！
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><img src="__IMG__z_tb13.png" /></div>
+                            <div class="text">
+                                <p class="mb20">薪资 / SALARY</p>你想要的，你期望的，<br />这里都能带给你，努力<br />吧，少年！
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section recruitment-03">
+            <div class="center-wrap">
+                <div class="z-mod14 mb80 tc">
+                    <p>事业合伙人</p>
+                    <span class="z-zhn">我们在召唤你</span>
+                </div>
+                <div class="z-mod15">
+                    <a class="prev"></a>
+                    <a class="next"></a>
+                    <div class="bd">
+                        <ul class="ulWrap">
+                        <volist name="list" id="val">
+                            <li>
+                                <a href="javascript:void(0);" class="showInBg">
+                                    <img src="{:thumb($val['thumb'])}" class="db auto" />
+                                    <p>职位：{$val['title']}</p>
+                                    <span>查看详情</span>
+                                    <data style="display:none;" value="{$val['title']}">{:html_entity_decode($val['content'])}</data>
+                                </a>
+                            </li>
+                        </volist>
+                        </ul>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    jQuery(".z-mod15").slide({titCell:".hd ul",mainCell:".bd .ulWrap",autoPage:true,effect:"leftLoop",vis:4});
+                </script>
+            </div>
+        </div>
+        <div class="section recruitment-04">
+            <div class="center-wrap">
+                <div class="z-mod16 tc mb70">
+                    <p><span>联系我们</span></p>
+                    <p>在这里，一群兄弟姐妹等你加入</p>
+                </div>
+                <div class="z-mod17">
+                    <ul class="fix">
+					<volist name=":get_lists(20)" id="val">
+                        <li>
+                            <a href="javascript:void(0);"><p class="mb20">{$val['title']}</p>联系电话：{$val['extends']['field_1']}<br />邮箱：{$val['extends']['field_2']}<br />地址：{$val['extends']['field_3']}</a>
+                        </li>
+					</volist>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section fp-auto-height">
+            <include file="Public/footer" />
+        </div>
+    </div>
+    <div class="dialog" id="InBg">
+        <a class="i-close" href="javascript:closeInBg();"><img src="__IMG__z_close1.png" class="db" /></a>
+        <div class="z-title tc">title</div>
+        <div id="example" class="example">
+            <div class="mr30">content</div>
+        </div>
+    </div>
+    <!--登录 弹框end-->
+</block>

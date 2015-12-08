@@ -1,0 +1,57 @@
+<extend name="Public/base" />
+<block name='css'>
+	<link rel="stylesheet" href="__CSS__common.css" />
+    <link rel="stylesheet" href="__CSS__style.css" />
+    <link rel="stylesheet" href="__CSS__index.css" />
+</block>
+
+<block name='js'>
+    <script src="__JS__jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+    <script src="__JS__jquery.style.js"></script>
+</block> 
+
+<block name="main">
+<section class="z-ban1 minw-1200" style="background: url(__IMG__z_ban1.jpg) center top no-repeat;" style="top:135px">
+    <div class="ban1-c tc">
+        <img src="__IMG__z_slogan1.png" class="dib mb35" />
+        <img src="__IMG__z_slogan1e.png" class="dib" />
+    </div>
+</section>
+	<section class="ykuai_01 minw-1200">
+	    <section class="ydivbg_01 minw-1200 pt40">
+	            <section class="container auto fix mb100">
+					<div class="address fl">当前位置：{:catpos($catid)}</div>
+					<div class="navigation fr">
+						<volist name=":get_category($CAT['pid'])" id="val">
+							<a href="{$val['url']}" <eq name="key" value="$catid">class="on"</eq>>{$val['title']}</a>
+						</volist>
+					</div>
+	            </section>
+	            <section class="container auto">
+	                <div class="y-tit1">
+	                    {$info['title']}
+	                    <span>时间：{:date('Y-m-d', $info['create_time'])}        发布者：admin</span>
+	                </div>
+	                <div class="y_art01 mb45">
+	                    {$info['content']}
+	                    <div class="y_fen">
+	                        {:prve_page($info['id'],$catid)}
+	                        {:next_page($info['id'],$catid)}
+	                        <div class="bdsharebuttonbox fr">
+								<a href="#" class="bds_more" data-cmd="more"></a>
+								<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+								<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+								<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+								<a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a>
+								<a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+								<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+							</div>
+	                    </div>
+
+	                </div>
+	            </section>
+	    </section>
+	</section>
+	<include file="Public/footer" />
+</block>

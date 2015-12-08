@@ -1,0 +1,37 @@
+<extend name="Public/base" />
+
+<block name="main">
+    <!--header end-->
+    <section class="z-ban1 minw-1200" style="background: url({:thumb($CAT['image'],1920,450)}) center top no-repeat;">
+        <div class="ban1-c minw-1200 tc text-case">
+            <p>Contact</p>
+            we will provide the best quality service
+        </div>
+    </section>
+    <!--banner end-->
+    <section class="z-bg03 minw-1200 pt40 pb30">
+        <section class="container auto mb100">
+            <div class="address">当前位置：{:catpos($catid)}</div>
+        </section>
+        <section class="container auto">
+            <div class="z-tit1 tc mb40">
+                {$CAT['title']}
+    	        <p class="text-case">{$CAT['english']}</p>
+    	        <img src="__IMG__/z_tb6.png" class="db auto" />
+            </div>
+            <div class="z-mod5 tc">
+                <p class="mb30"><a href="./" class="a_1">网站首页</a></p>
+            <volist name=":get_category(0)" id="val">
+                <p><a href="{$val['url']}" class="a_1">{$val['title']}</a></p>
+                <p class="mb30">
+                    <volist name=":get_category($key)" id="v">
+                    <a href="{$v['url']}" class="a_2">{$v['title']}</a>
+                    </volist>
+                </p>
+            </volist>
+            </div>
+        </section>
+    </section>
+
+    <include file="Public/footer" />
+</block>

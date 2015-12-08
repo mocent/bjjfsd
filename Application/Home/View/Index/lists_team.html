@@ -1,0 +1,115 @@
+<extend name="Public/base" />
+<block name="css">
+	<link rel="stylesheet" href="__CSS__style.css" />
+	<!-- <link rel="stylesheet" href="__CSS__reset.css"> -->
+</block>
+<block name="js">
+	<script type="text/javascript" src="__JS__jquery.lazyload.min.js"></script>
+	<script type="text/javascript" src="__JS__blocksit.min.js"></script>
+	<script src="__JS__jquery.style.js"></script>
+</block>
+<block name="main">
+	<section class="z-ban1 minw-1200" style="background: url({:thumb($CAT['image'],1920,449)}) center top no-repeat;">
+
+	</section>
+	<section class="container auto fix mb100 pt40">
+	    <div class="address fl">当前位置：{:catpos($catid)}</div>
+	    <div class="navigation fr">
+			<volist name=":get_category($CAT['pid'])" id="val">
+	        	<a href="{$val['url']}" <eq name="key" value="$catid">class="on"</eq>>{$val['title']}</a>
+			</volist>
+	    </div>
+	</section>
+	<section class="container auto">
+		<div class="z-tit1 tc mb35">
+	        {$CAT['title']}
+	        <p class="text-case">{$CAT['english']}</p>
+	        <img src="__IMG__/z_tb6.png" class="db auto" />
+	    </div>
+		<div class="mb100">
+	        <div id="wrapper">
+		        <div id="container">
+					<volist name="list" id="val">
+			            <div class="y_block_01">
+		                    <div class="y_bnr">
+		                        <div class="aaaaa"><img src="{:thumb($val['thumb'])}" width="193" class="lazy"></div>
+		                        <a href="javascript:void(0);"><span>{$val['title']}：</span>{$val['description']}</a>
+		                    </div>
+		                </div>
+					</volist>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	<script type="text/javascript">
+        var $page = 2;
+        $(function () {
+            $("img.lazy").lazyload({
+                load: function () {
+                    $('#container').BlocksIt({
+                        numOfCol: 5,
+                        offsetX: 14,
+                        offsetY: 15
+                    });
+                }
+            });
+            $(window).scroll(function () {
+                // 当滚动到最底部以上50像素时， 加载新内容
+                if ($(document).height() - $(this).scrollTop() - $(this).height() < 50) {
+					$.ajax({
+						url: location.href,
+						type: 'get',
+						data: {p:$page},
+						dataType: 'html',
+						success: function(res){
+							if (res) {
+								$("#container").append(res);
+								$page++;
+								$('#container').BlocksIt({
+			                        numOfCol: 5,
+			                        offsetX: 14,
+			                        offsetY: 15
+			                    });
+			                    $("img.lazy").lazyload();
+							}
+						},
+						error: function(){
+							alert('网络异常...');
+						}
+					});
+                }
+            });
+
+            //window resize
+            var currentWidth = 1100;
+            $(window).resize(function () {
+                var winWidth = $(window).width();
+                var conWidth;
+                if (winWidth < 660) {
+                    conWidth = 440;
+                    col = 2
+                } else if (winWidth < 880) {
+                    conWidth = 660;
+                    col = 3
+                } else if (winWidth < 1100) {
+                    conWidth = 880;
+                    col = 4;
+                } else {
+                    conWidth = 1100;
+                    col = 5;
+                }
+
+                if (conWidth != currentWidth) {
+                    currentWidth = conWidth;
+                    $('#container').width(conWidth);
+                    $('#container').BlocksIt({
+                        numOfCol: col,
+                        offsetX: 14,
+                        offsetY: 15
+                    });
+                }
+            });
+        });
+    </script>
+
+</block>

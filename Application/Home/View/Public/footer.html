@@ -1,0 +1,43 @@
+<footer class="wb footer footerts">
+    <section class="footertop">
+        <section class="footertop1 w">
+            <section class="footertop11  ovh fix">
+			<volist name=":get_lists(20, '', 3)" id="val">
+                <div class="footert1 fl">
+                    <img src="__IMG__phone.png" height="49" width="49" class="fl">
+                    <div class="fl">
+                        <span>{$val['title']}咨询热线：</span>
+                        {:array_shift(explode(' ', $val['extends']['field_1']))}
+                    </div>
+                </div>
+			</volist>
+            </section>
+        </section>
+    </section>
+    <section class="footerbot w fix">
+        <section class="footerbot1 fl fix">
+			<volist name=":get_category(0)" id="val">
+	            <section class="footerb1 fl">
+	                <a href="{$val['url']}" class="footerb1abt">{$val['title']}</a>
+	                <ul class="ul1">
+						<volist name=":get_category($key)" id="v">
+	                    <li><a href="{$v['url']}">{$v['title']}</a></li>
+						</volist>
+	                </ul>
+	            </section>
+			</volist>
+        </section>
+        <section class="footerbot2 fr">
+            <div class="ewmk tc">
+                <div class="ewmkbt">关注我们</div>
+                <img src="__IMG__erweima.jpg" height="97" width="96">
+                <div class="ewmknr">微信公众号</div>
+            </div>
+        </section>
+    </section>
+    <section class="copyRight wb">
+        <section class="copyRight1 w">
+            {:C('COPYRIGHT')}
+        </section>
+    </section>
+</footer>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+	<title>{$meta_title}</title>
+	<meta name="keywords" content="{$meta_keywords}">
+	<meta name="description" content="{$meta_description}">
+    <!--[if lt IE 9]>
+    <script src="__JS__html5shiv.min.js"></script>
+    <script src="__JS__respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="__CSS__common.css" />
+    <block name="css">
+        <link rel="stylesheet" href="__CSS__style.css" />
+    </block>
+    <script src="__JS__jquery-1.9.1.min.js"></script>
+    <block name="js">
+        <script type="text/javascript" src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+        <script src="__JS__jquery.style.js"></script>
+    </block>
+</head>
+<block name="header">
+<body>
+
+<section class="navw special-nav min-special-nav" id="special-nav">
+    <nav class="nav auto w">
+        <a href="./" class="logo">
+            <img src="__IMG__logo2.png" height="76" class="logo1" title="{:C('WEB_SITE_TITLE')}">
+        </a>
+        <ul class="ul fix">
+            <li class="fl"><a href="{$Think.const.WEB_URL}">首 页</a></li>
+			<volist name="NAVS" id="val">
+            	<li class="fl"><a href="{$val['url']}" <eq name="val['action']" value="1">class="xz"</eq>>{:msubstr($val['title'],0,2,'utf8','')}</a></li>
+			</volist>
+        </ul>
+    </nav>
+    <div class="header-yy minw-1200"></div>
+</section>
+<!--header end-->
+</block>
+<block name="main">
+<section class="container z-mod1 auto mb100">
+    <div class="mod1-c mod1-c1 dw_1 tc">
+        <a href="{$CATEGORYS[5]['url']}">
+            <img src="__IMG__z_tb1.png" class="mb10" />
+            <p class="fa fs-14">{$CATEGORYS[5]['english']}</p>
+            <p class="fs-22">{$CATEGORYS[5]['title']}</p>
+        </a>
+    </div>
+    <div class="mod1-c mod1-c2 dw_2 tc">
+        <a href="{$CATEGORYS[6]['url']}">
+            <img src="__IMG__z_tb2.png" class="vm" />
+            <span class="dib ml10 vm tl">
+                <p class="fa">{$CATEGORYS[6]['english']}</p>
+                <p class="fs-22">{$CATEGORYS[6]['title']}</p>
+            </span>
+        </a>
+    </div>
+    <div class="mod1-c mod1-c2 dw_3 tc">
+        <a href="{$CATEGORYS[7]['url']}">
+            <img src="__IMG__z_tb3.png" class="vm" />
+            <span class="dib ml10 vm tl">
+                <p class="fa">{$CATEGORYS[7]['english']}</p>
+                <p class="fs-22">{$CATEGORYS[7]['title']}</p>
+            </span>
+        </a>
+    </div>
+    <div class="mod1-c mod1-c1 dw_4 tc">
+        <a href="{$CATEGORYS[9]['url']}">
+            <img src="__IMG__z_tb4.png" class="mb10" />
+            <p class="fa fs-14">{$CATEGORYS[9]['english']}</p>
+            <p class="fs-22">{$CATEGORYS[9]['title']}</p>
+        </a>
+    </div>
+    <div class="mod1-c mod1-c3 dw_5 tc">
+        <a href="{$CATEGORYS[8]['url']}">
+            <img src="__IMG__z_tb5.png" class="vm" />
+            <span class="dib ml10 vm tl">
+                <p class="fa">{$CATEGORYS[8]['english']}</p>
+                <p class="fs-22">{$CATEGORYS[8]['title']}</p>
+            </span>
+        </a>
+    </div>
+</section>
+<!--main end-->
+<include file="Public/footer" />
+</block>
+</body>
+</html>

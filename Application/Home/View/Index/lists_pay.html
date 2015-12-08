@@ -1,0 +1,55 @@
+<extend name="Public/base" />
+<block name="css">
+    <link rel="stylesheet" href="__CSS__jquery.fullPage.css" type="text/css">
+    <link rel="stylesheet" href="__CSS__style.css" />
+</block>
+<block name="js">
+    <script src="__JS__jquery.fullPage.js"></script>
+    <script src="__JS__jquery.style.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#dowebok').fullpage({
+                anchors: ['page1', 'page2', 'page3', 'page4','page5'],
+                menu: '#special-menu'
+            });
+        });
+    </script>
+</block>
+<block name="main">
+    <!--header end-->
+    <section class="z-ban1 minw-1200" style="background: url(__IMG__z_ban2.jpg) center top no-repeat;">
+        <div class="ban1-c minw-1200 tc text-case">
+            <p>Contact</p>
+            we will provide the best quality service
+        </div>
+    </section>
+    <!--banner end-->
+    <section class="z-bg02 minw-1200 pt40 pb30">
+        <section class="container auto mb100">
+            <div class="address">当前位置：{:catpos($catid)}</div>
+        </section>
+        <section class="container auto">
+            <div class="z-tit1 tc mb40">
+                {$CAT['title']}
+                <p class="text-case">{$CAT['english']}</p>
+                <img src="__IMG__/z_tb6.png" class="db auto" />
+            </div>
+            <div class="z-mod3 ovh">
+                <ul class="fix">
+                <volist name="list" id="val">
+                    <li class="fix">
+                        <img src="{:thumb($val['thumb'])}" class="tb fl mt5" />
+                        <div class="text fr">
+                            <p>对公招行信息：</p>
+                            <p>开户行：{$val['extends']['field_1']}</p>
+                            <p>账号：{$val['extends']['field_2']}</p>
+                            <p>{$val['extends']['field_3']} </p>
+                        </div>
+                    </li>
+                </volist>
+                </ul>
+            </div>
+        </section>
+    </section>
+    <include file="Public/footer" />
+</block>

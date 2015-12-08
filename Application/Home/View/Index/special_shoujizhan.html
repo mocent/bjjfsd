@@ -1,0 +1,231 @@
+<extend name="Public/base" />
+<block name="css">
+	<link rel="stylesheet" href="__CSS__jquery.fullPage.css" type="text/css">
+    <link rel="stylesheet" href="__CSS__mobilezhuanti.css" />
+    <link rel="stylesheet" href="__CSS__style.css" />
+    <link rel="stylesheet" href="__CSS__jquery.rollbar.css" />
+</block>
+<block name="js">
+    <script src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+    <script src="__JS__jquery.fullPage.js"></script>
+    <script type="text/javascript" src="__JS__jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="__JS__jquery.rollbar.min.js"></script>
+    <script src="__JS__jquery.style.js"></script>
+    <script type="text/javascript" src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //var $mlNav = $('.z-mod13');
+            $('#dowebok').fullpage({
+                anchors: ['page1', 'page2', 'page3','page4','page5','page6'],
+                menu: '#special-menu',
+                verticalCentered: !1
+                //onLeave: function(index, nextIndex, direction){
+                    //if(index == 1 && direction == 'down'){
+                        //$mlNav.animate({
+                            //marginLeft:200
+                        //}, 680);
+                    //} else if (index == 2 && direction == 'up') {
+                        //$mlNav.animate({
+                            //marginLeft:0
+                        //}, 680);
+                    //}
+                    //else if (index == 2 && direction == 'down') {
+                        //$mlNav.animate({
+                            //marginLeft:0
+                        //}, 680);
+                    //}
+                    //else if (index == 3 && direction == 'up') {
+                        //$mlNav.animate({
+                            //marginLeft:200
+                        //}, 680);
+                    //}
+                //}
+            })
+            //滚动条
+            $('#example').rollbar({zIndex:80});
+        });
+    </script>
+</block>
+<block name="main">
+<ul id="special-menu">
+    <li data-menuanchor="page1" class="active"><a href="#page1">&nbsp;</a></li>
+    <li data-menuanchor="page2"><a href="#page2">&nbsp;</a></li>
+    <li data-menuanchor="page3"><a href="#page3">&nbsp;</a></li>
+    <li data-menuanchor="page4"><a href="#page4">&nbsp;</a></li>
+    <li data-menuanchor="page5"><a href="#page5">&nbsp;</a></li>
+    <li data-menuanchor="page6"><a href="#page6">&nbsp;</a></li>
+    <!--<li data-menuanchor="page6"><a href="#page6">&nbsp;</a></li>-->
+</ul>
+<div id="dowebok">
+    <div class="section mobile_01">
+        <div class="center-wrap fix" style="position:relative;">
+            <img src="__IMG__mobile_tp1.png" height="122" width="493" class="mobile_01_tp mobile_01_tp1">
+            <img src="__IMG__mobile_tp2.png" height="431" width="750" class="mobile_01_tp mobile_01_tp2 db fr" style="position:relative;right:-30px;">
+        </div>
+    </div>
+    <div class="section mobile_02">
+        <div class="center-wrap">
+            <div class="mobile_02_bt tc">
+                为什么做手机网站<br>
+                <span><img src="__IMG__mobile_btwz.png" height="8" width="259"></span>
+            </div>
+            <div class="mobile_02_bot fix">
+                <img src="__IMG__mobile_tubiao.png" height="409" width="829" class="mobile_tubiao">
+                <div class="mobile_02_bl fl">
+                    据中国互联网信息中心(CNNIC)发布《第36次中国互联网络发展状况统计报告》，截至2015年6月，中国网民规模达<span>6.68亿</span>，其中，我国手机网民规模达<span>5.94亿</span>，占总网民数的<span>88.9%</span>。随着手机终端的大屏化、手机应用体验、4G诞生，移动互联网终端的趋势仍将进一步提升。你愿意失去 <span>5.94亿</span> 庞大市场吗？
+                    <a href="#" class="mobile_02_bota tc db">点击咨询</a>
+                </div>
+                <div class="mobile_02_br fr">
+                    <img src="__IMG__mobile_tp3.png" height="448" width="370">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section mobile_03">
+        <div class="center-wrap">
+            <div class="mobile_02_bt tc">
+                有图有真相<br>
+                <span><img src="__IMG__mobile_btwz2.png"></span>
+            </div>
+            <div class="mobile_03_nr fix">
+                <div class="mobile_03_nrl fl">
+                    <img src="__IMG__mobile_shouji2.png">
+                    <img src="__IMG__mobile_vs.png" class="mobile_vs">
+                    <img src="__IMG__mobile_shouji1.png">
+                    <img src="__IMG__mobile_gou1.png" class="mobile_03_img mobile_gou1">
+                    <img src="__IMG__mobile_cha1.png" class="mobile_03_img mobile_cha1">
+                </div>
+                <div class="mobile_03_nrr fr">
+                    <div class="mobile_03_nrrbt fix">
+                        <span>
+                            <img src="__IMG__mobile_gou2.png">
+                        </span>
+                        手机上看手机网站
+                    </div>
+                    <div class="mobile_03_nrrxx">
+                        <ul>
+                            <li><span>字体合适：</span>打开速度快   省流量</li>
+                            <li><span>方便推广：</span>结合微信   微博   QQ</li>
+                            <li><span>方便沟通：</span>一键拨号   一键短信   一键地图</li>
+                            <li><span>兼容性好：</span>无需安装   任何手机都能打开</li>
+                            <li><span>浏览方便：</span>不受时间限制</li>
+                            <li><span>抢先排名：</span>手机搜索引擎优先靠前</li>
+                        </ul>
+                    </div>
+                    <div class="mobile_03_nrrbt fix">
+                        <span>
+                            <img src="__IMG__mobile_cha2.png">
+                        </span>
+                        手机上看PC网站
+                    </div>
+                    <div class="mobile_03_nrrxx">
+                        字体小<span>|</span>
+                        加载慢<span>|</span>
+                        看不清<span>|</span>
+                        需放大<span>|</span>
+                        费流量<span>|</span>
+                        操控差
+                    </div>
+                    <a href="#" class="mobile_03_a1 tc">点击咨询</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section mobile_04">
+        <div class="center-wrap">
+            <div class="mobile_02_bt tc">
+                成功案例<br>
+                <span><img src="__IMG__mobile_btwz3.png"></span>
+            </div>
+            <div class="mobile_04_nr">
+                <div class="picScroll-left">
+                    
+                    <a class="next"><img src="__IMG__light_zuojian.png"></a>
+                    
+                    <a class="prev"><img src="__IMG__light_youjian.png"></a>
+                       
+                   
+                    <div class="bd">
+                        <ul class="picList">
+                            <li>
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                            </li>
+                            <li>
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                            </li>
+                            <li>
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                            </li>
+                            <li>
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                            </li>
+                            <li>
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                            </li>
+                            <li>
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                            </li>
+                        </ul>
+                    </div>
+                    <script type="text/javascript">
+                    jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"leftLoop",autoPlay:true,vis:5,trigger:"click"});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section mobile_05">
+        <div class="center-wrap tc" style="height:510px;">
+            <img src="__IMG__mobile_tp7.jpg" class="mobile_05_tp">
+        </div>
+    </div>
+    <div class="section mobile_06">
+        <div class="mobile_06_nr fix">
+            <div class="mobile_06_nrl fl">
+                <div class="mobile_06_nrbt">手机网站小知识<span>Knowledge</span></div>
+                <ul>
+                    <li>一键拨电话、一键短信、一键分享</li>
+                    <li>手机站不受时间/地点限制，有手机就可以浏览</li>
+                    <li>手机站在移动终端上访问的速度快</li>
+                    <li>占用手机的流量较少</li>
+                    <li>文字和图片大小适中，适合浏览</li>
+                    <li>可以和pc站做到数据同步</li>
+                    <li>不用安装任何程序，直接可以在手机上浏览</li>
+                    <li>可以结合百度/微信或二维码做宣传，打开移动终端市场</li>
+                </ul>
+            </div>
+            <div class="mobile_06_nrr fr">
+                <div class="mobile_06_nrbt ml20">在线留言<span>Online message</span></div>
+                <div class="light_market7rt3">
+                    <form>
+                        <div class="light_form">
+                            <div class="fix mb15 light_form_div">
+                                <input type="text" name="" class="inp-01"/>
+                                <span class="tc">留言主题：</span>
+                            </div>
+                            <div class="fix mb15 light_form_div">
+                                <input type="text" name="" class="inp-01"/>
+                                <span class="tc">客户姓名：</span>
+                            </div>
+                            <div class="fix mb15 light_form_div">
+                                <input type="text" name="" class="inp-01"/>
+                                <span class="tc">联系电话：</span>
+                            </div>
+                            <div class="fix mb15 light_form_div1">
+                                <textarea></textarea>
+                                <span class="tc">留言内容：</span>
+                            </div>
+                            <div class="fix">
+                                <input type="submit" name="" value="提交留言" class="db light_anniu112" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section fp-auto-height">
+		<include file="Public/footer" />
+    </div>
+</div>
+</block>

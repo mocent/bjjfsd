@@ -1,0 +1,182 @@
+<extend name="Public/base" />
+<block name="css">
+	<link rel="stylesheet" href="__CSS__style.css" />
+</block>
+<block name="js">
+	<script type="text/javascript" src="__JS__jquery.lazyload.min.js"></script>
+	<script type="text/javascript" src="__JS__blocksit.min.js"></script>
+	<script src="__JS__jquery.style.js"></script>
+</block>
+<block name="main">
+	<!--header end-->
+	<section class="z-ban1 minw-1200 mb35" style="background: url(__IMG__y_banner1.jpg) center top no-repeat;">
+	    <div class="y_banner">
+	        <img src="__IMG__y_zi01.png" alt="">
+	        <a href="javascript:;"><img src="__IMG__y_zi02.jpg" alt=""></a>
+	    </div>
+	</section>
+	<!--banner end-->
+	<section class="container auto">
+	    <div class="z-mod6 mb30">
+	        <ul>
+	            <li class="fix">
+	                <div class="c_1">服务：</div>
+	                <div class="c_2">
+					<volist name=":C('SERVER_LIST')" id="val">
+	                    <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$key, 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style']))}" class="a_1 <eq name="sousuo['server']" value="$key">on_1</eq>">{$val}</a>
+					</volist>
+	                </div>
+	            </li>
+	            <li class="fix">
+	                <div class="c_1">行业：</div>
+	                <div class="c_2">
+						<volist name=":C('PROFESSION_LIST')" id="val">
+		                    <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$key, 'style'=>$sousuo['style']))}" class="a_1 <eq name="sousuo['profession']" value="$key">on_1</eq>">{$val}</a>
+						</volist>
+	                </div>
+	            </li>
+	            <li class="fix">
+	                <div class="c_1">颜色：</div>
+	                <div class="c_2">
+						<volist name=":C('STYLE_LIST')" id="val">
+							<eq name="i" value="1">
+								<a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$key))}" class="a_1 <eq name="sousuo['style']" value="$key">on_1</eq>">{$val}</a>
+							<else />
+		                    	<a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$key))}" class="a_2 bg_{$val} <eq name="sousuo['style']" value="$key">on_2</eq>">&nbsp;</a>
+							</eq>
+						</volist>
+	                </div>
+	            </li>
+	        </ul>
+	    </div>
+	    <div class="z-mod7 mb30 fix">
+	        <div class="mod7-c1 fl fix">
+				<div class="mod7-c1 fl fix">
+		            <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style'], 'sort'=>1))}" <eq name="sousuo['sort']" value="1">class="on"</eq>>综合</a>
+		            <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style'], 'moods_desc'=>1))}" <eq name="sousuo['moods_desc']" value="1">class="on"</eq>>人气</a>
+		            <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style'], 'time_desc'=>1))}" <eq name="sousuo['time_desc']" value="1">class="on"</eq>>最新</a>
+		        </div>
+	        </div>
+	        <div class="mod7-c2 fr">
+	            共筛选<span class="ml5 mr5">{$_total}</span>个案例
+				<a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>2, 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style']))}" class="a_1 fs <eq name="sousuo['case_type']" value="2">on_1</eq>">列表</a>
+	            <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>1, 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style']))}" class="a_2 fs <eq name="sousuo['case_type']" value="1">on_2</eq>">图表</a>
+	        </div>
+	    </div>
+		<div class="mb100" style=" position: relative;">
+			<div id="wrapper">
+                <div class="connnn">
+                    <div id="container">
+						<volist name="list" id="val">
+	                        <div class="y_block_03">
+								<div class="y_bnr2">
+									<span>{:msubstr($val['title'], 0, 16)}</span>
+									<img src="{:thumb($val['thumb_lb'])}">
+									{:msubstr($val['description'], 0, 255)}
+								</div>
+	                            <div class="y_bxia">
+									<a href="{$CATEGORYS[20]['url']}" class="y_a1">咨询策划</a>
+									<a href="{$val['url']}" class="y_a2">查看案例</a>
+	                            </div>
+	                        </div>
+						</volist>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		var $page = 2;
+        $(function () {
+            $("img.lazy").lazyload({
+                load: function () {
+                    $('#container').BlocksIt({
+                        numOfCol: 3,
+                        offsetX: 12,
+                        offsetY: 8
+                    });
+                }
+            });
+            $(window).scroll(function () {
+                // 当滚动到最底部以上50像素时， 加载新内容
+                if ($(document).height() - $(this).scrollTop() - $(this).height() < 50) {
+                    // $.ajax({
+                    //     url: 'test.html',
+                    //     data: {p: page},
+                    //     type: 'html',
+                    //     dataType: 'get',
+                    //     success: function(msg){
+                    //         if (msg) {
+                    //             $('#container').append(msg);
+                    //             page++;
+                    //             $('#container').BlocksIt({
+                    //                 numOfCol: 3,
+                    //                 offsetX: 8,
+                    //                 offsetY: 8
+                    //             });
+                    //             $("img.lazy").lazyload();
+                    //         } else {
+                    //             alert('没有数据');
+                    //         }
+                    //     },
+                    //     error: function(){
+                    //         alert('网络异常...');
+                    //     }
+
+                    // });
+					$.ajax({
+						url: location.href,
+						type: 'get',
+						data: {p:$page},
+						dataType: 'html',
+						success: function(res){
+							if (res) {
+								$("#container").append(res);
+								$page++;
+								$('#container').BlocksIt({
+			                        numOfCol: 3,
+			                        offsetX: 12,
+			                        offsetY: 8
+			                    });
+			                    $("img.lazy").lazyload();
+							}
+						},
+						error: function(){
+							alert('网络异常...');
+						}
+					});
+                }
+            });
+
+            //window resize
+            var currentWidth = 1100;
+            $(window).resize(function () {
+                var winWidth = $(window).width();
+                var conWidth;
+                if (winWidth < 660) {
+                    conWidth = 440;
+                    col = 2
+                } else if (winWidth < 880) {
+                    conWidth = 660;
+                    col = 3
+                } else if (winWidth < 1100) {
+                    conWidth = 880;
+                    col = 4;
+                } else {
+                    conWidth = 1100;
+                    col = 5;
+                }
+
+                if (conWidth != currentWidth) {
+                    currentWidth = conWidth;
+                    $('#container').width(conWidth);
+                    $('#container').BlocksIt({
+                        numOfCol: col,
+                        offsetX: 12,
+                        offsetY: 8
+                    });
+                }
+            });
+        });
+    </script>
+</block>

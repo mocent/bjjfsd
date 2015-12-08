@@ -1,0 +1,13 @@
+<volist name="list" id="val">
+	<div class="y_block_03">
+		<div class="y_bnr2">
+			<span>{:msubstr($val['title'], 0, 16)}</span>
+			<img src="{:thumb($val['thumb_lb'])}">
+			{:msubstr($val['description'], 0, 255)}
+		</div>
+		<div class="y_bxia">
+			<a href="{$CATEGORYS[20]['url']}" class="y_a1">咨询策划</a>
+			<a href="{$val['url']}" class="y_a2">查看案例</a>
+		</div>
+	</div>
+</volist>

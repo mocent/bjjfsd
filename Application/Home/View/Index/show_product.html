@@ -1,0 +1,68 @@
+<extend name="Public/base" />
+<block name='css'>
+	<link rel="stylesheet" href="__CSS__style.css" />
+	<link rel="stylesheet" href="__CSS__index.css" />
+</block>
+
+<block name='js'>
+    <script type="text/javascript" src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+    <script src="__JS__jquery.style.js"></script>
+</block>
+<block name="main">
+	<section class="z-ban1 minw-1200" style="background: url(__IMG__y_banner1.jpg) center top no-repeat; top:135px">
+	    <div class="y_banner">
+	        <img src="__IMG__y_zi01.png" alt="">
+	        <a href="#"><img src="__IMG__y_zi02.jpg" alt=""></a>
+	    </div>
+	</section>
+	<section class="container auto fix mb100" style="padding-top:135px">
+		<div class="address y_ju">当前位置：{:catpos($catid)}</div>
+	    <div class="y_mainleft1 fl">
+	        <div class="y_kk1">
+	            <span class="span1">{$info['title']}</span>
+				<notempty name="info['extends']['field_1']">
+	            <img src="{:thumb($info['extends']['field_1'])}" alt="{$info['title']}">
+				</notempty>
+				<if condition="array_filter($info['extends']['field_2'])">
+					<span class="span2">网站效果图 </span>
+					<volist name="info['extends']['field_2']" id="val">
+						<img src="{:thumb($val)}" alt="网站效果图" class="mb24">
+					</volist>
+				</if>
+				<notempty name="info['extends']['field_3']">
+					<span class="span2">客户的好评</span>
+					<div class="ybg">
+						<img src="{:thumb($info['extends']['field_3'])}" alt="{$info['title']}">
+					</div>
+				</notempty>
+	            <div class="y_zzi">{$info['content']}</div>
+	            <div class="y_di fix">
+	                <!-- <div class="y_zuo fl">项目关键词： <a href="#">建筑行业</a> <a href="#">设计公司</a><a href="#">室内设计</a>     </div> -->
+	                <div class="y_you fr"><a href="{$info['extends']['url']}" target="_black">查看网址</a><a href="{$CATEGORYS[20]['url']}" class="yling">点击咨询</a></div>
+	            </div>
+	        </div>
+	        <div class="y_fen2">
+	            <div class="y_ss fl">
+					{:prve_page($info['id'],$catid)}<br />
+					{:next_page($info['id'],$catid)}
+				</div>
+	            <div class="y_fan fr"><a href="javascript:history.go(-1);">返回>></a></div>
+	        </div>
+	    </div>
+	    <div class="y_mainright1 fr">
+	        <span>客户案例行业分类</span>
+	        <ul class="yul1">
+			<volist name=":C('PROFESSION_LIST')" id="val">
+	            <li><a href="{:U('Index/lists', array('catid'=>$catid, 'profession'=>$key))}">{$val}</a></li>
+			</volist>
+	        </ul>
+	        <span>{$CATEGORYS[19]['title']}</span>
+	        <ul class="yul2 fs">
+			<volist name=":get_lists(19)" id="val">
+	            <li><a href="{$val['url']}">{:msubstr($val['title'], 0, 20)}</a></li>
+			</volist>
+	        </ul>
+	    </div>
+	</section>
+	<include file="Public/footer" />
+</block>

@@ -1,0 +1,84 @@
+<extend name="Public/base" />
+<block name="css">
+	<link rel="stylesheet" href="__CSS__style.css" />
+	<!-- <link rel="stylesheet" href="__CSS__reset.css"> -->
+</block>
+<script src="__JS__jquery-1.9.1.min.js"></script>
+<block name="js">
+	<script type="text/javascript" src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+	<script src="__JS__jquery.style.js"></script>
+	<script src="__JS__jquery.imagesloaded.js"></script>
+	<script src="__JS__jquery.wookmark.js"></script>
+</block>
+<block name="main">
+	<!--header end-->
+	<section class="z-ban1 minw-1200 mb35" style="background: url(__IMG__y_banner1.jpg) center top no-repeat;">
+	    <div class="y_banner">
+	        <img src="__IMG__y_zi01.png" alt="">
+	        <a href="javascript:;"><img src="__IMG__y_zi02.jpg" alt=""></a>
+	    </div>
+	</section>
+	<!--banner end-->
+	<section class="container auto">
+		<div class="z-mod6 mb30">
+	        <ul>
+	            <li class="fix">
+	                <div class="c_1">服务：</div>
+	                <div class="c_2">
+					<volist name=":C('SERVER_LIST')" id="val">
+	                    <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$key, 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style']))}" class="a_1 <eq name="sousuo['server']" value="$key">on_1</eq>">{$val}</a>
+					</volist>
+	                </div>
+	            </li>
+	            <li class="fix">
+	                <div class="c_1">行业：</div>
+	                <div class="c_2">
+						<volist name=":C('PROFESSION_LIST')" id="val">
+		                    <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$key, 'style'=>$sousuo['style']))}" class="a_1 <eq name="sousuo['profession']" value="$key">on_1</eq>">{$val}</a>
+						</volist>
+	                </div>
+	            </li>
+	            <li class="fix">
+	                <div class="c_1">颜色：</div>
+	                <div class="c_2">
+						<volist name=":C('STYLE_LIST')" id="val">
+							<eq name="i" value="1">
+								<a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$key))}" class="a_1 <eq name="sousuo['style']" value="$key">on_1</eq>">{$val}</a>
+							<else />
+		                    	<a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$key))}" class="a_2 bg_{$val} <eq name="sousuo['style']" value="$key">on_2</eq>">&nbsp;</a>
+							</eq>
+						</volist>
+	                </div>
+	            </li>
+	        </ul>
+	    </div>
+	    <div class="z-mod7 mb30 fix">
+	        <div class="mod7-c1 fl fix">
+	            <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style'], 'sort'=>1))}" <eq name="sousuo['sort']" value="1">class="on"</eq>>综合</a>
+	            <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style'], 'moods_desc'=>1))}" <eq name="sousuo['moods_desc']" value="1">class="on"</eq>>人气</a>
+	            <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>$sousuo['case_type'], 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style'], 'time_desc'=>1))}" <eq name="sousuo['time_desc']" value="1">class="on"</eq>>最新</a>
+	        </div>
+	        <div class="mod7-c2 fr">
+	            共筛选<span class="ml5 mr5">{$_total}</span>个案例
+	            <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>2, 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style']))}" class="a_1 fs <eq name="sousuo['case_type']" value="2">on_1</eq>">列表</a>
+	            <a href="{:U('Index/lists', array('catid'=>$catid, 'case_type'=>1, 'server'=>$sousuo['server'], 'profession'=>$sousuo['profession'], 'style'=>$sousuo['style']))}" class="a_2 fs <eq name="sousuo['case_type']" value="1">on_2</eq>">图表</a>
+	        </div>
+	    </div>
+	    <div class="z-mod8 mb40">
+	        <ul class="fix">
+			<volist name="list" id="val">
+	            <li>
+	                <div class="pf-img"><a href="{$val['url']}"><img src="{:thumb($val['thumb_tw'],247,140)}" /></a></div>
+	                <div class="img"><img src="__IMG__z_img2.jpg" /></div>
+	                <div class="text">
+	                    <p><a href="{$val['url']}">{:msubstr($val['title'], 0, 16)}</a></p>
+	                    <p>{:msubstr($val['description'], 0, 20)}</p>
+	                </div>
+	            </li>
+			</volist>
+	        </ul>
+	        <div class="pages">{$_page}</div>
+	    </div>
+	</section>
+	<include file="Public/footer" />
+</block>

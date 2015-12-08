@@ -1,0 +1,60 @@
+<extend name="Public/base" />
+<block name="css">
+	<link rel="stylesheet" href="__CSS__style.css" />
+	<link rel="stylesheet" href="__CSS__jquery.fancybox.css" />
+</block>
+<script src="__JS__jquery-1.9.1.min.js"></script>
+<block name="js">
+	<script type="text/javascript" src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+	<script src="__JS__jquery.style.js"></script>
+	<script type="text/javascript" src="__JS__jquery.fancybox.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.fancybox').fancybox();
+		})
+	</script>
+</block>
+<block name="main">
+	<section class="z-ban1 minw-1200" style="background: url({:thumb($CAT['image'],1920,449)}) center top no-repeat;">
+
+	</section>
+	<section class="ykuai_01 minw-1200">
+	    <section class="ydivbg_01 minw-1200 pt40">
+	            <section class="container auto fix mb100">
+					<div class="address fl">当前位置：{:catpos($catid)}</div>
+					<div class="navigation fr">
+						<volist name=":get_category($CAT['pid'])" id="val">
+							<a href="{$val['url']}" <eq name="key" value="$catid">class="on"</eq>>{$val['title']}</a>
+						</volist>
+					</div>
+	            </section>
+	            <section class="container auto">
+					<div class="z-tit1 tc mb35">
+				        {$CAT['title']}
+				        <p class="text-case">{$CAT['english']}</p>
+				        <img src="__IMG__/z_tb6.png" class="db auto" />
+				    </div>
+					<div class="z-mod4 mb40">
+						<ul class="fix">
+							<volist name="list" id="val">
+								<li class="tc">
+									<div class="img">
+										<a class="fancybox" href="{:thumb($val['thumb'])}" data-fancybox-group="gallery" title="{$val['title']}">
+											<img src="{:thumb($val['thumb'])}" />
+										</a>
+									</div>
+									<p>{$val['title']}</p>
+								</li>
+							</volist>
+						</ul>
+						<notempty name="_page">
+							<div class="pages">
+								{$_page}
+							</div>
+						</notempty>
+	                </div>
+	            </section>
+	    </section>
+	</section>
+	<include file="Public/footer" />
+</block>

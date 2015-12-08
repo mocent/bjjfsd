@@ -1,0 +1,137 @@
+<extend name="Public/base" />
+<block name="css">
+	<link rel="stylesheet" href="__CSS__common.css" />
+    <link rel="stylesheet" href="__CSS__jquery.fullPage.css" type="text/css">
+    <link rel="stylesheet" href="__CSS__style.css" />
+</block>
+<block name="js">
+	<script src="__JS__jquery-1.9.1.min.js"></script>
+    <script src="__JS__jquery.fullPage.js"></script>
+    <script src="__JS__jquery.style.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('#dowebok').fullpage({
+                anchors: ['page1', 'page2', 'page3', 'page4','page5'],
+                menu: '#special-menu',
+                verticalCentered: !1
+
+            });
+        });
+    </script>
+</block>
+<block name="main">
+    <ul id="special-menu">
+        <li data-menuanchor="page1" class="active"><a href="#page1">&nbsp;</a></li>
+        <li data-menuanchor="page2"><a href="#page2">&nbsp;</a></li>
+        <li data-menuanchor="page3"><a href="#page3">&nbsp;</a></li>
+        <li data-menuanchor="page4"><a href="#page4">&nbsp;</a></li>
+        <li data-menuanchor="page5"><a href="#page5">&nbsp;</a></li>
+        <!--<li data-menuanchor="page6"><a href="#page6">&nbsp;</a></li>-->
+    </ul>
+    <div id="dowebok">
+    <div class="section w-web-01">
+        <div class="center-wrap">
+            <div class="web-01 rel tc">
+                <div class="s-1 abs"><img src="__IMG__l_img-41.png" alt=""/></div>
+                <div class="s-2 abs">
+                    <div class="ss-01 abs"><img src="__IMG__l_img-43.png" alt=""/></div>
+                    <div class="ss-02 abs"><img src="__IMG__l_img-44.png" alt=""/></div>
+                    <div class="ss-03 abs"><img src="__IMG__l_img-45.png" alt=""/></div>
+                </div>
+                <div class="s-3 abs"><img src="__IMG__l_img-46.png" alt=""/></div>
+            </div>
+        </div>
+    </div>
+    <div class="section w-web-02">
+        <div class="center-wrap ovh">
+            <div class="web-01 rel tc">
+                <div class="font-s b">
+                    庞大的数据库
+                    <span class="db n">Huge database</span>
+                </div>
+            </div>
+            <div class="fix">
+                <div class="web-02 rel fl">
+                    <div class="img-s">
+                        <img src="__IMG__l_img-38.png" alt=""/>
+                    </div>
+                    <div class="font-s font-s-02 b tc">
+                        根据兴趣爱好推送信息
+                        <span class="db n">According Interests push information</span>
+                    </div>
+                </div>
+                <div class="web-03 rel fr">
+                    <div class="img-s">
+                        <img src="__IMG__l_img-39.png" alt=""/>
+                    </div>
+                    <div class="font-s font-s-02 b tc">
+                        便捷的移动沟通方式
+                        <span class="db n">Convenient mobile communication</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section w-web-03">
+        <div class="wrap-height rel">
+            <div class="web-01 abs"><img src="__IMG__l_img-30.png" alt=""/></div>
+            <div class="web-02 abs"><img src="__IMG__l_img-31.png" alt=""/></div>
+            <div class="web-03 abs"><img src="__IMG__l_img-32.png" alt=""/></div>
+            <div class="web-04 abs"><img src="__IMG__l_img-33.png" alt=""/></div>
+        </div>
+    </div>
+    <div class="section w-web-04">
+        <div class="center-wrap" style="height:607px;">
+            <img src="__IMG__l_img-37.png" alt=""/>
+        </div>
+    </div>
+        <div class="section w-web-05">
+            <div class="wrap-height">
+                <div class="main">
+                    <div class="main-l fl abs tc">
+                        <div class="s-1 mb30">
+                            <p>庞大的数据库</p>
+                            <p>便捷的移动沟通方式</p>
+                            <p>根据兴趣爱好推送信息</p>
+                        </div>
+                        <div class="s-2">
+                            <div><span class="f-01 b">7</span><span class="s-4">年时间</span></div>
+                            <div class="b s-3">6000<span class="col-02bb00">家合作客户</span></div>
+                            <p>平均每天有两家公司选择与我们合作！</p>
+                        </div>
+                        <div class="s-5 b">
+                            <span class="col-02bb00">原因何在?</span>共鸣！
+                        </div>
+                        <p>平均每天有两家公司选择与我们合作！</p>
+                    </div>
+                    <div class="main-form fr abs">
+                        <div class="fix mb15">
+                            <input type="text" name="" class="inp-01 fl"/>
+                            <span class="abs t-s">您的网址：</span>
+                        </div>
+                        <div class="fix mb15">
+                            <input type="text" name="" class="inp-01 fl"/>
+                            <span class="abs t-s">联系人：</span>
+                        </div>
+                        <div class="fix mb15">
+                            <input type="text" name="" class="inp-01 fl"/>
+                            <span class="abs t-s">联系电话：</span>
+                        </div>
+                        <div class="fix mb15">
+                            <input type="text" name="" class="inp-01 fl"/>
+                            <span class="abs t-s">邮箱：</span>
+                        </div>
+                        <div class="fix">
+                            <input type="submit" name="" value="提交" class="btn-s btn-01 fl" />
+                            <input type="reset" name="" value="重置" class="btn-s btn-02 fl ml10" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section fp-auto-height">
+            <include file="Public/footer" />
+        </div>
+    </div>
+</block>

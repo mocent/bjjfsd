@@ -1,0 +1,58 @@
+<extend name="Public/base" />
+<block name="css">
+    <link rel="stylesheet" href="__CSS__jquery.fullPage.css" type="text/css">
+    <link rel="stylesheet" href="__CSS__style.css" />
+</block>
+<block name="main">
+    <!--header end-->
+    <section class="y_bg01 minw-1200 y_pt100">
+        <div class="container auto fix">
+            <div class="z-mod01 box-shadow"></div>
+            <div class="ymain_left fl">
+                <img src="__IMG__y_contact.png">
+            <volist name="list" id="val">
+                <div class="y_kuai01 <eq name="i" value="1">mt20</eq>">
+                    <span>{$val['title']}</span>
+                    联系电话：{$val['extends']['field_1']}<br>
+    邮箱： {$val['extends']['field_2']}<br>
+    地址：{$val['extends']['field_3']}
+                </div>
+            </volist>
+
+            </div>
+            <div class="ymian_right fl">
+                <form class="" action="{:U('Index/message')}" method="post">
+                <div class="y_biaodan fr">
+                    <div class="y_select">
+                        <span></span>
+                        <ul>
+							<volist name=":C('SERVER_LIST')" id="val">
+							<eq name="i" value="1">
+							<php>continue;</php>
+							</eq>
+                            <li class="option" title="{$val}"><a>{$val}</a></li>
+							</volist>
+                        </ul>
+                        <input name="show_type" id="ShowType" type="hidden" value="" />
+                    </div>
+                    <input name="title" type="text" value="联系人" onfocus="if(this.value=='联系人'){this.value='';}"  onblur="if(this.value==''){this.value='联系人';}" class="y_put1 y_putb"><br>
+                    <input name="tel" value="联系人电话" onfocus="if(this.value=='联系人电话'){this.value='';}"  onblur="if(this.value==''){this.value='联系人电话';}" class="y_put1 y_putb">
+                    <textarea name="content" placeholder="您的要求" class="y_put2 y_putb">您的要求</textarea>
+                    <div class="y_div1 fix">
+                        <input type="text" name="verify" value="请输入验证码" onfocus="if(this.value=='请输入验证码'){this.value='';}"  onblur="if(this.value==''){this.value='请输入验证码';}" class="y_put3 fl y_putb"><img id="verify" src="{:U('verify')}" alt="" class="fl">
+                    </div>
+                    <input type="submit" value="提 交" class="y_put4 y_putb">
+                </div>
+                </form>
+                <script type="text/javascript">
+                    $(function(){
+                        $("#verify").click(function(){
+                            $(this).attr("src", "{:U('verify')}?cache=" + Math.random());
+                        });
+                    })
+                </script>
+            </div>
+        </div>
+    </section>
+    <include file="Public/footer" />
+</block>

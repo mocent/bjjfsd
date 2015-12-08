@@ -1,0 +1,184 @@
+<extend name="Public/base" />
+<block name="css">
+    <link rel="stylesheet" href="__CSS__jquery.fullPage.css" type="text/css">
+    <link rel="stylesheet" href="__CSS__style.css" />
+</block>
+<block name="js">
+    <script src="__JS__jquery.fullPage.js"></script>
+    <script src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+    <script src="__JS__jquery.DB_rotateRollingBanner.min.js"></script>
+    <script src="__JS__jquery.style.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#dowebok').fullpage({
+                anchors: ['page1', 'page2', 'page3', 'page4','page5','page6'],
+                menu: '#special-menu',
+                verticalCentered: !1,
+                onLeave: function(index, nextIndex, direction){
+                    var leavingSection = $(this);
+
+                    //after leaving section 2
+
+                    if(index == 5 && direction =='down'){
+                        if($('.footer').hasClass('xz')){
+                            return false;
+                        }
+                        else{
+                            $('.footer').addClass('xz');
+                            $('.light_ts').animate({'margin-top':'-370px'},500);
+                            $('.footer').animate({bottom:'0px'},500);
+                            return false;
+                        }
+
+                    }
+                    else if(index == 5 && direction == 'up'){
+                        if($('.footer').hasClass('xz')){
+
+                            $('.light_ts').animate({'margin-top':'0px'},500);
+                            $('.footer').animate({bottom:'-380px'},500,function(){
+                                $('.footer').removeClass('xz');
+                            });
+                            return false;
+                        }
+
+
+                    }
+                }
+            });
+        });
+    </script>
+</block>
+<block name="main">
+    <ul id="special-menu">
+        <li data-menuanchor="page1" class="active"><a href="#page1">&nbsp;</a></li>
+        <li data-menuanchor="page2"><a href="#page2">&nbsp;</a></li>
+        <li data-menuanchor="page3"><a href="#page3">&nbsp;</a></li>
+        <li data-menuanchor="page4"><a href="#page4">&nbsp;</a></li>
+        <li data-menuanchor="page5"><a href="#page5">&nbsp;</a></li>
+        <!--<li data-menuanchor="page6"><a href="#page6">&nbsp;</a></li>-->
+    </ul>
+    <div id="dowebok">
+        <div class="section about-us-01">
+            <div class="center-wrap ovh">
+                <div class="about-us-title tc rel mb20">
+                    <h3 class="n">{$CATEGORYS[15]['title']}</h3>
+                    <span>{$CATEGORYS[15]['english']}</span>
+                </div>
+                <div class="main mb15">
+                    <h5 class="n mb10 rel">北京金方时代科技有限公司致力于企业信息化建设，面向企业、事业单位、政府机关提供网站建设服务，在北京、河北分别设立分公司。</h5>
+                    <p class="rel">金方时代北京分公司分别在朝阳区、海淀区和丰台区设置有三个运营中心，同一城市分设的运营中心是金方时代区别于其它网站建设公司的最大特色，为客户设计网页效果及开发网站功能提供了便利的位置及面对面贴心服务。基于此，客户网站最终实现良好的用户浏览体验及良好的搜索引擎体验成为现实。</p>
+                </div>
+                <ul class="fix ovh mb30 rel img-s">
+                    <li class="rel"><img src="__IMG__l_img-01.jpg" alt=""/></li>
+                    <li class="rel"><img src="__IMG__l_img-01.jpg" alt=""/></li>
+                    <li class="rel"><img src="__IMG__l_img-01.jpg" alt=""/></li>
+                    <li class="rel"><img src="__IMG__l_img-01.jpg" alt=""/></li>
+                </ul>
+                <a href="{$CATEGORYS[15]['url']}" class="about-us-more about-us-more-01 auto rel">查看详情</a>
+            </div>
+        </div>
+        <div class="section about-us-02">
+            <div class="center-wrap ovh">
+                <div class="about-us-title tc rel mb30">
+                    <h3 class="n">{$CATEGORYS[16]['title']}</h3>
+                    <span>{$CATEGORYS[16]['english']}</span>
+                </div>
+                <div  class="about-main-01 mb30">
+                    <ul class="d_img">
+                        <volist name=":get_position('position_1', 'Team')" id="val">
+                        <li class="d_pos{$i}"><img src="{:thumb($val['thumb'],278,317)}" alt="{$val['title']}"/></li>
+                        </volist>
+                    </ul>
+                    <p class="d_prev"><img src="__IMG__l_img-prev.png" alt=""></p>
+                    <p class="d_next"><img src="__IMG__l_img-next.png" alt=""></p>
+                </div>
+                <script>
+
+                    $('.about-main-01').DB_rotateRollingBanner({
+                        key:"c37080",
+                        moveSpeed:200,
+                        autoRollingTime:5000
+                    })
+                </script>
+                <a href="{$CATEGORYS[16]['url']}" class="about-us-more about-us-more-01 auto rel">查看详情</a>
+            </div>
+        </div>
+        <div class="section about-us-03">
+            <div class="center-wrap ovh">
+                <div class="about-us-title tc rel mb30">
+                    <h3 class="n">{$CATEGORYS[17]['title']}</h3>
+                    <span>{$CATEGORYS[17]['english']}</span>
+                </div>
+                <div class="about-main-01 rel">
+                    <div class="s-1 rel">
+                        <volist name=":get_position('position_1', '', 17)" id="val">
+                            <switch name="i">
+                                <case value="1">
+                                    <div class="s-3 evens bg-01 news-01"><a href="{$val['url']}">{:date('Y-m-d', $val['create_time'])}  /  {$val['title']}</a></div>
+                                </case>
+                                <case value="2">
+                                    <div class="s-3 evens bg-02 news-03"><a href="{$val['url']}">{:date('Y-m-d', $val['create_time'])}  /  {$val['title']}</a></div>
+                                </case>
+                                <case value="3">
+                                    <div class="s-2 odds bg-03 news-02"><a href="{$val['url']}">{:date('Y-m-d', $val['create_time'])}  /  {$val['title']}</a></div>
+                                </case>
+                                <case value="4">
+                                    <div class="s-2 odds bg-04 news-04"><a href="{$val['url']}">{:date('Y-m-d', $val['create_time'])}  /  {$val['title']}</a></div>
+                                </case>
+                            </switch>
+                        </volist>
+                    </div>
+                </div>
+                <a href="{$CATEGORYS[17]['url']}" class="about-us-more about-us-more-01 auto rel">查看详情</a>
+            </div>
+        </div>
+        <div class="section about-us-04">
+            <div class="center-wrap ovh">
+                <div class="about-us-title tc rel mb30">
+                    <h3 class="n">{$CATEGORYS[18]['title']}</h3>
+                    <span>{$CATEGORYS[18]['english']}</span>
+                </div>
+                <div class="about-main-01" id="about-main-01">
+                    <div class="hd">
+                        <a class="next"></a>
+                        <a class="prev"></a>
+                    </div>
+                    <div class="bd">
+                        <ul class="picList">
+                            <volist name=":get_position('position_1', 'Haoping')" id="val">
+                                <li>
+                                    <div class="pic"><a href="javascript:void(0);"><img src="{:thumb($val['thumb'])}" /></a></div>
+                                    <div class="title">{$val['title']}</div>
+                                </li>
+                            </volist>
+                        </ul>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    jQuery("#about-main-01").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:4,trigger:"click"});
+                </script>
+                <a href="{$CATEGORYS[18]['url']}" class="about-us-more about-us-more-01 auto rel">查看详情</a>
+            </div>
+        </div>
+        <div class="section about-us-05">
+            <div class="center-wrap ovh">
+                <div class="light_ts">
+                    <div class="about-us-title tc rel mb30">
+                        <h3 class="n">{$CATEGORYS[19]['title']}</h3>
+                        <span>{$CATEGORYS[19]['english']}</span>
+                    </div>
+                    <div class="about-main-01 mb30">
+                        <volist name=":get_position('position_1', '', 19)" id="val">
+                        <div><span class="num tc">no.{$i}</span><a href="{$val['url']}">{$val['title']}</a></div>
+                        </volist>
+                    </div>
+                    <a href="{$CATEGORYS[19]['url']}" class="about-us-more about-us-more-01 auto rel">查看详情</a>
+                </div>
+            </div>
+            <include file="Public/footer" />
+        </div>
+        <div class="section fp-auto-height" style="height:1px;">
+
+        </div>
+    </div>
+</block>
