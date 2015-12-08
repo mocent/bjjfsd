@@ -166,12 +166,16 @@ body{overflow-x:hidden;}
 }*/
 .logo2{display:none;position: absolute;top:0px;left:0px;}
 .ul{position: absolute;top:50%;right:-20px;height:40px;margin-top:-20px;}
-.ul>li>a{font-size:16px;color:#999999; font-family: "微软雅黑";}
+.ul>li>a{font-size:16px;color:#999999; font-family: "微软雅黑";
+    -webkit-transition:color .3s ease-in-out;
+    -o-transition:color .3s ease-in-out;
+    transition:color .3s ease-in-out;
+}
 .ul>li{padding:0px 20px;height:40px;line-height:40px;}
 .ul>li>a.xz{color:#c5a47e;}
-
+.ul>li>a:hover{color:#c5a47e;}
 /*footer*/
-.footer{background:#2a2a2a;}
+.footer{background:#2a2a2a;font-family:"微软雅黑";}
 
 .footertop{background:url(../images/hengxian.png) repeat-x bottom;}
 .footertop1{padding:25px 0px;}

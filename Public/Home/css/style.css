@@ -11,7 +11,7 @@
     min-width: 1200px;
 }
 
-body{height:auto;overflow:auto;}
+
 body{
     font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif;
 }
@@ -188,10 +188,24 @@ body{
 .z-mod6 ul li{ line-height: 30px; padding: 12px 0; border-bottom: 1px solid #ccc; font-size: 16px; color: #3f3f3f;}
 .z-mod6 ul li .c_1{ float: left; width: 72px; text-align: right;}
 .z-mod6 ul li .c_2{ float: left; width: 1126px;}
-.z-mod6 ul li .c_2 .a_1{ display: inline-block; padding: 0 12px; color: #3f3f3f;}
+.z-mod6 ul li .c_2 .a_1{ display: inline-block; padding: 0 12px; color: #3f3f3f;margin-left:1px;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 .z-mod6 ul li .c_2 .on_1{ background: #c09e76; color: #fff;}
 
-.z-mod6 ul li .c_2 .a_2{ display: inline-block; width: 28px; height: 28px; margin-right: 14px;}
+
+.z-mod6 ul li .c_2 .a_1:hover{
+    background: #c09e76; color: #fff;
+}
+
+
+.z-mod6 ul li .c_2 .a_2{ display: inline-block; width: 28px; height: 28px; margin-right: 14px;
+    -webkit-transition: border .4s ease-in-out;
+    -o-transition: border .4s ease-in-out;
+    transition: border .4s ease-in-out;
+}
 .z-mod6 ul li .c_2 .a_2.bg_cc2d29{ background: #cc2d29; border: 1px solid #cc2d29;}
 .z-mod6 ul li .c_2 .a_2.bg_f47315{ background: #f47315; border: 1px solid #f47315;}
 .z-mod6 ul li .c_2 .a_2.bg_f4dc11{ background: #f4dc11; border: 1px solid #f4dc11;}
@@ -202,6 +216,12 @@ body{
 .z-mod6 ul li .c_2 .a_2.bg_1b1b1b{ background: #1b1b1b; border: 1px solid #1b1b1b;}
 .z-mod6 ul li .c_2 .a_2.bg_abaaab{ background: #abaaab; border: 1px solid #abaaab;}
 .z-mod6 ul li .c_2 .on_2{ border-color: #f00 !important;}
+
+
+.z-mod6 ul li .c_2 .a_2:hover{
+    border-color: #f00 !important;
+}
+
 
 .z-mod7{ background: #f7f7f7; border: 1px solid #cfcfcf;}
 .z-mod7 .mod7-c1 a{ float: left; padding: 0 30px 0 17px; height: 44px; line-height: 44px; background: url("../images/z_libg1.png") right center no-repeat; border-right: 1px solid #cfcfcf; font-size: 16px; color: #3e3e3e;}
