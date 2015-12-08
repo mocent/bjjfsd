@@ -11,7 +11,7 @@
     min-width: 1200px;
 }
 
-
+body{height:auto;overflow:auto;}
 body{
     font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif;
 }
