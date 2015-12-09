@@ -65,14 +65,16 @@
                     <span>{$CATEGORYS[15]['english']}</span>
                 </div>
                 <div class="main mb15">
-                    <h5 class="n mb10 rel">北京金方时代科技有限公司致力于企业信息化建设，面向企业、事业单位、政府机关提供网站建设服务，在北京、河北分别设立分公司。</h5>
-                    <p class="rel">金方时代北京分公司分别在朝阳区、海淀区和丰台区设置有三个运营中心，同一城市分设的运营中心是金方时代区别于其它网站建设公司的最大特色，为客户设计网页效果及开发网站功能提供了便利的位置及面对面贴心服务。基于此，客户网站最终实现良好的用户浏览体验及良好的搜索引擎体验成为现实。</p>
+                    <h5 class="n mb10 rel">{$CATEGORYS[3]['description']}</h5>
+                    <p class="rel">{$CATEGORYS[15]['description']}</p>
                 </div>
                 <ul class="fix ovh mb30 rel img-s">
-                    <li class="rel"><img src="__IMG__l_img-01.jpg" alt=""/></li>
-                    <li class="rel"><img src="__IMG__l_img-01.jpg" alt=""/></li>
-                    <li class="rel"><img src="__IMG__l_img-01.jpg" alt=""/></li>
-                    <li class="rel"><img src="__IMG__l_img-01.jpg" alt=""/></li>
+                    <volist name=":get_banner(5)" id="val">
+                    <li class="rel"><img src="{:thumb($val['image'])}" alt=""/></li>
+                    <?php
+                     if($i == 4) break;
+                         ?>                    
+                    </volist>
                 </ul>
                 <a href="{$CATEGORYS[15]['url']}" class="about-us-more about-us-more-01 auto rel">查看详情</a>
             </div>
