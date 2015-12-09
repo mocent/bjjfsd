@@ -28,6 +28,7 @@ class ToolController extends \Think\Controller {
             $upload->savePath  =     'Content/'; // 设置附件上传（子）目录
             // 上传文件
             $info   =   $upload->upload();
+            header("Content-type: text/html; charset=utf-8");
             $html = '<script>';
             if(!$info) {// 上传错误提示错误信息
                 $html .= 'alert("'. $upload->getError() .'"); window.close();';
