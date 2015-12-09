@@ -113,6 +113,15 @@ function y_select(select) {
         $(this).parent().parent().find('input').attr("value", $(this).attr("title"));
         $(this).parent().parent().find('span').html($(this).find("a").html());
     });
+
+
+
+    // 案例底部a划过效果。
+    $('.y_you a').eq(0).hover(function(){
+        $(this).parents('.y_you').toggleClass('dw1');
+    })
+
+
 }
 
 //招聘弹框
@@ -124,3 +133,7 @@ function closeInBg(){
     $("#InBg").fadeOut(200).addClass('hideSweetAlert');
 
 }
+
+
+
+
