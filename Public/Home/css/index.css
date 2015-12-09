@@ -1140,10 +1140,10 @@ transition-delay: 1s;
 }
 @media screen and (max-width:1280px) and (min-width:1024px){
   .ind_b1nr{
-    -webkit-transform: scale(.6);
-    -ms-transform: scale(.6);
-    -o-transform: scale(.6);
-    transform: scale(.6);
+    -webkit-transform: scale(.7);
+    -ms-transform: scale(.7);
+    -o-transform: scale(.7);
+    transform: scale(.7);
   }
 }
 @media screen and (max-width:1920px) and (min-width:1440px){
@@ -1155,6 +1155,14 @@ transition-delay: 1s;
   }
 }
 
+@media screen and (max-width:1024px){
+  .ind_b1nr{
+    -webkit-transform: scale(.6);
+    -ms-transform: scale(.6);
+    -o-transform: scale(.6);
+    transform: scale(.6);
+  }
+}
 
 
 .jzbt a{color:#333;}
