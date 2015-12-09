@@ -2493,7 +2493,7 @@ color: #ffffff;
 
 }
 
-.active .light_dw2,.active .light_dw7,.active .light_dw10{
+.active .light_dw2,.active .light_dw6,.active .light_dw10{
     -webkit-transform: translate(0);
     -ms-transform: translate(0);
     -o-transform: translate(0);
@@ -2513,7 +2513,7 @@ color: #ffffff;
 
 }
 
-.active .light_dw3,.active .light_dw6,.active .light_dw11{
+.active .light_dw3,.active .light_dw7,.active .light_dw11{
     -webkit-transform: translate(0);
     -ms-transform: translate(0);
     -o-transform: translate(0);
@@ -3064,8 +3064,5 @@ color: #ffffff;
 
 
 
-
-
-/*1231233131311231*/
 
 
