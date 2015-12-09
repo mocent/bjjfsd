@@ -679,16 +679,35 @@ body{
 .y_zuo{ font-size: 14px; color:#4b4b4b;}
 .y_zuo a{ color:#4b4b4b; margin-right: 12px;}
 
-.y_you{ width:254px; height:29px; line-height: 29px; background:url(../images/ybg_12.png) no-repeat;}
-.y_you a{ display:inline-block; width:97px; margin-left: 30px; text-align: center; color:#828282;}
-.y_you a.yling{ color:#fff;}
+
+
+
+/*12-9 修改案例详情底部的鼠标滑过效果*/
+
+.y_you{ width:220px;padding:0px 15px; height:29px; line-height: 29px; background:url(../images/ybg_12.png) no-repeat;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.y_you a{ display:inline-block; width:100px;padding-left:10px; text-align: center; color:#828282;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.y_you a.yling{ color:#fff;width:80px;padding-left:30px;}
 .y_ss{ font-size: 14px; color:#4b4b4b; line-height: 28px; margin-top: 13px;}
 .y_ss a{ color:#4b4b4b;}
 .y_fan a{ font-size: 14px; color:#4b4b4b; line-height: 56px;}
+.y_you.dw1{background-position:-170px 0px;}
+.y_you.dw1 a{padding-right:30px;padding-left:0px;width:80px;color:#fff;}
+.y_you.dw1 a.yling{width:100px;padding-right:10px;color:#4b4b4b;}
+
+/*12-9结束*/
 
 
 .y_mainright1{ width:250px;}
-.y_mainright1>span{ display: block; width:229; height:70px; line-height: 70px; padding-left: 21px; background:#3a3a3a; font-size: 24px; color:#ffffff;}
+.y_mainright1>span{ display: block; width:229px; height:70px; line-height: 70px; padding-left: 21px; background:#3a3a3a; font-size: 24px; color:#ffffff;}
 .y_mainright1 ul{ width:248px; border:1px solid #cfcfcf;  border-top:none; margin-bottom: 23px;}
 .yul1 li{ width:100%; height:55px; line-height: 55px;  border-top:1px solid #cfcfcf; }
 .yul1 li:first-child{  border-top:none;}
