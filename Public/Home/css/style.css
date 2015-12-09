@@ -3063,16 +3063,45 @@ color: #ffffff;
 }
 
 
-.d_prev,.d_next{
+.d_prev,.d_next,.img1,.img2{
     -webkit-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
-.d_prev:hover,.d_next:hover{
+
+.d_prev:hover,.d_next:hover,.img1:hover,.img2:hover{
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
     transform: scale(1.2);
 }
+.img1:hover{
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -ms-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+.img2:hover{
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    -ms-transform-origin: right center;
+    -o-transform-origin: right center;
+    transform-origin: right center;
+}
 
 .light_anniu111{width:100%;height:50px; background:#9a5c0d;border:0px;color:#fff;font-size:16px;}
+
+
+.prev,.next{
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.prev:hover,.next:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
