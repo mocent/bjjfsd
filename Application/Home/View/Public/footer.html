@@ -18,10 +18,10 @@
         <section class="footerbot1 fl fix">
 			<volist name=":get_category(0)" id="val">
 	            <section class="footerb1 fl">
-	                <a href="{$val['url']}" class="footerb1abt">{$val['title']}</a>
+	                <a href="{$val['url']}" target="_blank" class="footerb1abt">{$val['title']}</a>
 	                <ul class="ul1">
 						<volist name=":get_category($key)" id="v">
-	                    <li><a href="{$v['url']}">{$v['title']}</a></li>
+	                    <li><a href="{$v['url']}" target="_blank">{$v['title']}</a></li>
 						</volist>
 	                </ul>
 	            </section>

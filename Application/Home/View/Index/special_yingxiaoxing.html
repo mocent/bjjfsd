@@ -11,12 +11,45 @@
             $('#dowebok').fullpage({
                 anchors: ['page1', 'page2', 'page3', 'page4','page5', 'page6','page7'],
                 menu: '#special-menu',
-                verticalCentered: !1
+                verticalCentered: !1,
+                onLeave: function(index, nextIndex, direction){
+                    var leavingSection = $(this);
+                    //after leaving section 2
+                    if(index == 7 && direction =='down'){
+                        if($('.footer').hasClass('xz')){
+                            return false;
+                        }
+                        else{
+                            $('.footer').addClass('xz');
+                            $('.light_ts').animate({'margin-top':'-385px'},500);
+                            $('.footer').animate({bottom:'0px'},500);
+                            return false;
+                        }
+
+                    }
+                    else if(index == 7 && direction == 'up'){
+                        if($('.footer').hasClass('xz')){
+
+                            $('.light_ts').animate({'margin-top':'0px'},500);
+                            $('.footer').animate({bottom:'-385px'},500,function(){
+                                $('.footer').removeClass('xz');
+                            });
+                            return false;
+                        }
+
+
+                    }
+                }
             });
         });
     </script>
 </block>
 <block name="main">
+    <ul class="xjul">
+		<volist name=":get_category(1)" id="val">
+	    	<li><a href="{$val['url']}" target="_blank"><img src="__IMG__xjtb{$i}.png" class="light_img1"><img src="__IMG__xjtb{$i}{$i}.png" class="light_img2"></a></li>
+		</volist>
+	</ul>    
     <ul id="special-menu">
         <li data-menuanchor="page1" class="active"><a href="#page1">&nbsp;</a></li>
         <li data-menuanchor="page2"><a href="#page2">&nbsp;</a></li>
@@ -360,66 +393,68 @@
         </div>
         <div class="section light-marketing-07">
             <div class="center-wrap fix">
-                <div class="light_market7l fl tc">
-                    <div class="light_market7lt">
-                        若我们很弱很功利，多说无济于事；<br>
-    若我们很强很专注，价值不言自明；
+                <div class="light_ts">
+                    <div class="light_market7l fl tc">
+                        <div class="light_market7lt">
+                            若我们很弱很功利，多说无济于事；<br>
+        若我们很强很专注，价值不言自明；
+                        </div>
+                        <div class="light_market7lt2">
+                            <span class="b">7</span>年时间
+                        </div>
+                        <div class="light_market7lt3 b">
+                            <span>6000</span>家合作客户
+                        </div>
+                        <div class="light_market7lt4 mt5">
+                            平均每天有两家公司选择与我们合作！
+                        </div>
+                        <div class="light_market7lt5 b">
+                            <span>原因何在?</span>共鸣！
+                        </div>
+                        <div class="light_market7lt6 mt5">
+                            我们在金方时代等着您
+                        </div>
                     </div>
-                    <div class="light_market7lt2">
-                        <span class="b">7</span>年时间
-                    </div>
-                    <div class="light_market7lt3 b">
-                        <span>6000</span>家合作客户
-                    </div>
-                    <div class="light_market7lt4 mt5">
-                        平均每天有两家公司选择与我们合作！
-                    </div>
-                    <div class="light_market7lt5 b">
-                        <span>原因何在?</span>共鸣！
-                    </div>
-                    <div class="light_market7lt6 mt5">
-                        我们在金方时代等着您
-                    </div>
-                </div>
-                <div class="light_market7r tc fr">
-                    <div class="light_market7rt1">
-                        网站营销力检测调查
-                    </div>
-                    <div class="light_market7rt2">
-                        提交可免费获得当前网站诊断报告
-                    </div>
-                    <div class="light_market7rt3">
-                        <form>
-                            <div class="light_form">
-                                <div class="fix mb15 light_form_div">
-                                    <input type="text" name="" class="inp-01"/>
-                                    <span class="tc">您的网址：</span>
+                    <div class="light_market7r tc fr">
+                        <div class="light_market7rt1">
+                            网站营销力检测调查
+                        </div>
+                        <div class="light_market7rt2">
+                            提交可免费获得当前网站诊断报告
+                        </div>
+                        <div class="light_market7rt3">
+                            <form action="{:U('Index/message')}" method="post">
+                                <div class="light_form">
+                                    <div class="fix mb15 light_form_div">
+                                        <input type="text" name="zhuti" class="inp-01"/>
+                                        <span class="tc">您的网址：</span>
+                                    </div>
+                                    <div class="fix mb15 light_form_div">
+                                        <input type="text" name="title" class="inp-01"/>
+                                        <span class="tc">联系人：</span>
+                                    </div>
+                                    <div class="fix mb15 light_form_div">
+                                        <input type="text" name="tel" class="inp-01"/>
+                                        <span class="tc">联系电话：</span>
+                                    </div>
+                                    <div class="fix mb15 light_form_div">
+                                        <input type="text" name="content" class="inp-01"/>
+                                        <span class="tc">邮箱：</span>
+                                    </div>
+                                    <div class="fix">
+                                        <input type="hidden" name="type" value="yingxiao">
+                                        <input type="submit" name="" value="提 交" class="db light_anniu111" />
+
+                                    </div>
                                 </div>
-                                <div class="fix mb15 light_form_div">
-                                    <input type="text" name="" class="inp-01"/>
-                                    <span class="tc">联系人：</span>
-                                </div>
-                                <div class="fix mb15 light_form_div">
-                                    <input type="text" name="" class="inp-01"/>
-                                    <span class="tc">联系电话：</span>
-                                </div>
-                                <div class="fix mb15 light_form_div">
-                                    <input type="text" name="" class="inp-01"/>
-                                    <span class="tc">邮箱：</span>
-                                </div>
-                                <div class="fix">
-                                    <input type="submit" name="" value="提 交" class="db light_anniu111" />
-                                   
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="section fp-auto-height">
             <include file="Public/footer" />
+        </div>
+        <div class="section light-marketing-08 fp-auto-height" style="height:1px;">
         </div>
     </div>
 </block>

@@ -11,35 +11,41 @@
     <script type="text/javascript" src="__JS__jquery.mousewheel.js"></script>
     <script type="text/javascript" src="__JS__jquery.rollbar.min.js"></script>
     <script src="__JS__jquery.style.js"></script>
-    <script type="text/javascript" src="__JS__jquery.SuperSlide.2.1.1.js"></script>
-    <script type="text/javascript">
+	<script type="text/javascript">
         $(document).ready(function() {
             //var $mlNav = $('.z-mod13');
             $('#dowebok').fullpage({
-                anchors: ['page1', 'page2', 'page3','page4','page5','page6'],
+                anchors: ['page1', 'page2', 'page3','page4','page5','page6','page7'],
                 menu: '#special-menu',
-                verticalCentered: !1
-                //onLeave: function(index, nextIndex, direction){
-                    //if(index == 1 && direction == 'down'){
-                        //$mlNav.animate({
-                            //marginLeft:200
-                        //}, 680);
-                    //} else if (index == 2 && direction == 'up') {
-                        //$mlNav.animate({
-                            //marginLeft:0
-                        //}, 680);
-                    //}
-                    //else if (index == 2 && direction == 'down') {
-                        //$mlNav.animate({
-                            //marginLeft:0
-                        //}, 680);
-                    //}
-                    //else if (index == 3 && direction == 'up') {
-                        //$mlNav.animate({
-                            //marginLeft:200
-                        //}, 680);
-                    //}
-                //}
+                verticalCentered: !1,
+                onLeave: function(index, nextIndex, direction){
+                    var leavingSection = $(this);
+                    //after leaving section 2
+                    if(index == 6 && direction =='down'){
+                        if($('.footer').hasClass('xz')){
+                            return false;
+                        }
+                        else{
+                            $('.footer').addClass('xz');
+                            $('.mobile_06_nr').animate({'margin-bottom':'360px'},500);
+                            $('.footer').animate({bottom:'0px'},500);
+                            return false;
+                        }
+
+                    }
+                    else if(index == 6 && direction == 'up'){
+                        if($('.footer').hasClass('xz')){
+
+                            $('.mobile_06_nr').animate({'margin-bottom':'0px'},500);
+                            $('.footer').animate({bottom:'-380px'},500,function(){
+                                $('.footer').removeClass('xz');
+                            });
+                            return false;
+                        }
+
+
+                    }
+                }
             })
             //滚动条
             $('#example').rollbar({zIndex:80});
@@ -47,6 +53,11 @@
     </script>
 </block>
 <block name="main">
+<ul class="xjul">
+	<volist name=":get_category(1)" id="val">
+    	<li><a href="{$val['url']}" target="_blank"><img src="__IMG__xjtb{$i}.png" class="light_img1"><img src="__IMG__xjtb{$i}{$i}.png" class="light_img2"></a></li>
+	</volist>
+</ul>
 <ul id="special-menu">
     <li data-menuanchor="page1" class="active"><a href="#page1">&nbsp;</a></li>
     <li data-menuanchor="page2"><a href="#page2">&nbsp;</a></li>
@@ -139,31 +150,31 @@
             </div>
             <div class="mobile_04_nr">
                 <div class="picScroll-left">
-                    
+
                     <a class="next"><img src="__IMG__light_zuojian.png"></a>
-                    
+
                     <a class="prev"><img src="__IMG__light_youjian.png"></a>
-                       
-                   
+
+
                     <div class="bd">
                         <ul class="picList">
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>                                
+                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
                             </li>
                         </ul>
                     </div>
@@ -175,57 +186,60 @@
         </div>
     </div>
     <div class="section mobile_05">
-        <div class="center-wrap tc" style="height:510px;">
+        <div class="center-wrap tc">
             <img src="__IMG__mobile_tp7.jpg" class="mobile_05_tp">
         </div>
     </div>
     <div class="section mobile_06">
-        <div class="mobile_06_nr fix">
-            <div class="mobile_06_nrl fl">
-                <div class="mobile_06_nrbt">手机网站小知识<span>Knowledge</span></div>
-                <ul>
-                    <li>一键拨电话、一键短信、一键分享</li>
-                    <li>手机站不受时间/地点限制，有手机就可以浏览</li>
-                    <li>手机站在移动终端上访问的速度快</li>
-                    <li>占用手机的流量较少</li>
-                    <li>文字和图片大小适中，适合浏览</li>
-                    <li>可以和pc站做到数据同步</li>
-                    <li>不用安装任何程序，直接可以在手机上浏览</li>
-                    <li>可以结合百度/微信或二维码做宣传，打开移动终端市场</li>
-                </ul>
-            </div>
-            <div class="mobile_06_nrr fr">
-                <div class="mobile_06_nrbt ml20">在线留言<span>Online message</span></div>
-                <div class="light_market7rt3">
-                    <form>
-                        <div class="light_form">
-                            <div class="fix mb15 light_form_div">
-                                <input type="text" name="" class="inp-01"/>
-                                <span class="tc">留言主题：</span>
+        <div class="light_ts1">
+            <div class="mobile_06_nr fix">
+                <div class="mobile_06_nrl fl">
+                    <div class="mobile_06_nrbt">手机网站小知识<span>Knowledge</span></div>
+                    <ul>
+                        <li>一键拨电话、一键短信、一键分享</li>
+                        <li>手机站不受时间/地点限制，有手机就可以浏览</li>
+                        <li>手机站在移动终端上访问的速度快</li>
+                        <li>占用手机的流量较少</li>
+                        <li>文字和图片大小适中，适合浏览</li>
+                        <li>可以和pc站做到数据同步</li>
+                        <li>不用安装任何程序，直接可以在手机上浏览</li>
+                        <li>可以结合百度/微信或二维码做宣传，打开移动终端市场</li>
+                    </ul>
+                </div>
+                <div class="mobile_06_nrr fr">
+                    <div class="mobile_06_nrbt ml20">在线留言<span>Online message</span></div>
+                    <div class="light_market7rt3">
+                        <form action="{:U('Index/message')}" method="post">
+                            <div class="light_form">
+                                <div class="fix mb15 light_form_div">
+                                    <input type="text" name="zhuti" class="inp-01"/>
+                                    <span class="tc">留言主题：</span>
+                                </div>
+                                <div class="fix mb15 light_form_div">
+                                    <input type="text" name="title" class="inp-01"/>
+                                    <span class="tc">客户姓名：</span>
+                                </div>
+                                <div class="fix mb15 light_form_div">
+                                    <input type="text" name="tel" class="inp-01"/>
+                                    <span class="tc">联系电话：</span>
+                                </div>
+                                <div class="fix mb15 light_form_div1">
+                                    <textarea name="content"></textarea>
+                                    <span class="tc">留言内容：</span>
+                                </div>
+                                <div class="fix">
+									<input type="hidden" name="type" value="shouji">
+                                    <input type="submit" name="" value="提交留言" class="db light_anniu112" />
+                                </div>
                             </div>
-                            <div class="fix mb15 light_form_div">
-                                <input type="text" name="" class="inp-01"/>
-                                <span class="tc">客户姓名：</span>
-                            </div>
-                            <div class="fix mb15 light_form_div">
-                                <input type="text" name="" class="inp-01"/>
-                                <span class="tc">联系电话：</span>
-                            </div>
-                            <div class="fix mb15 light_form_div1">
-                                <textarea></textarea>
-                                <span class="tc">留言内容：</span>
-                            </div>
-                            <div class="fix">
-                                <input type="submit" name="" value="提交留言" class="db light_anniu112" />
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="section fp-auto-height">
 		<include file="Public/footer" />
+    </div>
+    <div class="section light-marketing-08 fp-auto-height" style="height:1px;">
     </div>
 </div>
 </block>

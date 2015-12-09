@@ -1,3 +1,22 @@
+<div class="hdtop">
+    <a href="javascript:void(0);" class="tja">手机站留言</a>
+    <div class="hdtright">
+        <form action="" method="get">
+        <span>留言分类：</span>
+        <select name="type" class="easyui-combobox" style="width:130px;height:25px">
+            <option value="default">网建留言</option>
+            <option selected="selected" value="shouji">手机站留言</option>
+            <option value="yingxiao">营销型留言</option>
+            <option value="wechat">微网站留言</option>
+        </select>
+        <input type="hidden" name="m" value="Admin" />
+        <input type="hidden" name="c" value="Message" />
+        <input type="hidden" name="a" value="index" />
+        <input type="submit" value="查 询" class="button" />
+        </form>
+    </div>
+    <div class="clear"></div>
+</div>
     <div class="hdbot">
     <style media="screen">
         .head910 td {
@@ -10,17 +29,17 @@
     <table width="910" border="0" cellspacing="1" cellpadding="0" class="table1 tab">
         <tr class="head910">
             <td align="center"><input type="checkbox" class="allcheck">ID</td>
-            <td align="center">联系人</td>
-            <td align="center">类型</td>
-            <td align="center">电话</td>
+            <td align="center">留言主题</td>
+            <td align="center">客户姓名</td>
+            <td align="center">联系电话</td>
             <td align="center">发布时间</td>
             <td align="center">操作</td>
         </tr>
         <volist name="list" id="v">
             <tr>
                 <td align="center"><input type="checkbox" name="id" value="{$v['id']}">{$v['id']}</td>
-                <td align="center">{$v['title']}</td>
                 <td align="center">{$v['zhuti']}</td>
+                <td align="center">{$v['title']}</td>
                 <td align="center">{$v['tel']}</td>
                 <td align="center">{:date('Y-m-d H:i:s', $v['create_time'])}</td>
                 <td align="center">

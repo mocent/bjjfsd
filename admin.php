@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-exit;
+
 // 应用入口文件
 
 // 检测PHP环境
@@ -19,15 +19,15 @@ define('APP_DEBUG',True);
 
 define('WEB_ROOT', __DIR__ . '/');
 
-define('BIND_MODULE','Admin');
+
+
+define('WEB_URL', 'http://' . $_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,strrpos($_SERVER['SCRIPT_NAME'], '/')+1));
+
+
 // 定义应用目录
 define('APP_PATH','./Application/');
 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 
-<<<<<<< HEAD
-// 亲^_^ 后面不需要任何代码了 就是如此简单222
-=======
-// 亲^_^ 后面不需要任何代码了 就是如此简单1111
->>>>>>> 07619e77fad257d8460bdf96d22b0270ea875c21
+// 亲^_^ 后面不需要任何代码了 就是如此简单
