@@ -347,15 +347,50 @@ body{overflow-x:hidden;}
 
 }
 .team1{position: relative;width:100%;height:100%;}
-.teamsec1{position: absolute;top:0px;left:0px;height:100%;width:100%;}
+.teamsec1{width:100%;position: relative;height:580px; background:url(../images/index_bj1.jpg) no-repeat;}
 
 .posr{position: relative;z-index:1111;}
 
-.teamsec1nr{height:366px;top:-50px;}
-.tdtpz{display: block;background:#c29459;position: absolute;top:50%;left:50%;z-index:11111;}
+.teamsec1nr{position: absolute;top:40px;left:50%;width:719px;margin-left:-360px;}
+.tdtpz{display: block;background:#c29459;position: absolute;top:50%;left:50%;z-index:11111;margin-left:-360px;margin-top:-100px;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    opacity:0;
+    -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
+    -o-transform: scale(.5);
+    transform: scale(.5);
+}
 
+.xz .tdtpz{
+    opacity:1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
 
-
+.xjanniu111{position: absolute;bottom:80px;left:50%;z-index:11111;margin-left:-75px;
+-webkit-transition: all 1s ease-in-out;
+-o-transition: all 1s ease-in-out;
+transition: all 1s ease-in-out;
+-webkit-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+-webkit-transform: scale(1.5);
+-ms-transform: scale(1.5);
+-o-transform: scale(1.5);
+transform: scale(1.5);
+opacity:0;
+}
+.xz .xjanniu111{
+-webkit-transform: scale(1);
+-ms-transform: scale(1);
+-o-transform: scale(1);
+transform: scale(1);
+opacity:1;
+}
 
 
 
