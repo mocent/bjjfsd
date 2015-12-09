@@ -126,6 +126,21 @@ function y_select(select) {
         $(this).find('img').fadeToggle(300);
     })
 
+
+    //contact 页面的
+    $('.light_textareaa').focus(function(){
+        if($(this).text()=='您的要求'){
+            $(this).text('');
+        }
+    
+    })
+    $('.light_textareaa').blur(function(){
+        if($(this).text()==''){
+            $(this).text('您的要求');
+        }
+    
+    })
+    
 }
 
 //招聘弹框
