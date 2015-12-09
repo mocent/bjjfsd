@@ -36,3 +36,4 @@ require './ThinkPHP/ThinkPHP.php';
 =======
 // 亲^_^ 后面不需要任何代码了 就是如此简单22211111111112222222333333333333444444444445555555555
 >>>>>>> 4c7465b7ff1999327ee27542e23dcd5d9cc9ce3d
+//dsdadasd asd sdadasdada
