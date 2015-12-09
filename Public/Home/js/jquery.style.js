@@ -121,6 +121,10 @@ function y_select(select) {
         $(this).parents('.y_you').toggleClass('dw1');
     })
 
+    //专题页面的悬浮导航
+    $('.xjul li a').hover(function(){
+        $(this).find('img').fadeToggle(300);
+    })
 
 }
 
