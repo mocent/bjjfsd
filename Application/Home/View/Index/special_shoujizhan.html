@@ -158,24 +158,11 @@
 
                     <div class="bd">
                         <ul class="picList">
+							<volist name=":get_product_position('position_1', 2)" id="val">
                             <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
+                                <div class="pic"><a href="{$val['url']}"><img src="{:thumb($val['thumb_tw'])}"/></a></div>
                             </li>
-                            <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
-                            </li>
-                            <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
-                            </li>
-                            <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
-                            </li>
-                            <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
-                            </li>
-                            <li>
-                                <div class="pic"><a href="#"><img src="__IMG__mobile_tp6.png"/></a></div>
-                            </li>
+							</volist>
                         </ul>
                     </div>
                     <script type="text/javascript">

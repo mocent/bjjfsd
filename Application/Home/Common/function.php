@@ -167,7 +167,7 @@ function get_product_position($field = 'position_1', $catid = 0, $limit = 0){
         $field => 1
     );
     if ($catid) {
-        $map['catid'] = $catid;
+        $map['catid'] = array('in', get_childs_str($catid));
     }
     if (empty($limit)) {
         $limit = '';
@@ -218,7 +218,7 @@ function get_product_lists($catid = 0, $type = '', $limit = 0){
     $model = M('Product');
     $map = array('status' => 1);
     if ($catid) {
-        $map['catid'] = $catid;
+        $map['catid'] = array('in', get_childs_str($catid));
     }
     if ($type) {
         $map['type'] = $type;
