@@ -356,9 +356,9 @@
 }
 
 .mobile_06_nr{
-     -webkit-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+     -webkit-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
     -webkit-transform: translateY(1000px) scale(0);
     -ms-transform: translateY(1000px) scale(0);
     -o-transform: translateY(1000px) scale(0);
