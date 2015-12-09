@@ -3063,6 +3063,16 @@ color: #ffffff;
 }
 
 
+.d_prev,.d_next{
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.d_prev:hover,.d_next:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
 
-
-
+.light_anniu111{width:100%;height:50px; background:#9a5c0d;border:0px;color:#fff;font-size:16px;}
