@@ -37,7 +37,7 @@ $(function(){
     wh=parseInt($(window).height());
     var ww=parseInt($(window).width());
     
-    // $('.top').height(wh);
+     $('.top').height(wh);
     // $('.team,.team1').css({'width':ww+'px','height':ww/12*6+'px'});
     // $('.tdtpz').css({'width':ww/2+'px','height':ww/6+'px','margin-top':-(ww/12)+'px','margin-left':-ww/4+'px'});
     // $('.teamsec1 a').css({'width':ww/12+'px','height':ww/12+'px'});
