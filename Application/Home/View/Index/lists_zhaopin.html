@@ -52,30 +52,17 @@
                 </div>
                 <div class="z-mod13">
                     <ul class="fix">
+                        <volist name=":get_banner(4)" id="val">
                         <li>
-                            <div class="img"><img src="__IMG__z_tb10.png" /></div>
+                            <div class="img"><img src="{:thumb($val['image'])}" /></div>
                             <div class="text">
-                                <p class="mb20">薪资 / SALARY</p>你想要的，你期望的，<br />这里都能带给你，努力<br />吧，少年！
+                                <p class="mb20">{$val['title']}</p>{$val['description']}
                             </div>
                         </li>
-                        <li>
-                            <div class="img"><img src="__IMG__z_tb11.png" /></div>
-                            <div class="text">
-                                <p class="mb20">薪资 / SALARY</p>你想要的，你期望的，<br />这里都能带给你，努力<br />吧，少年！
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><img src="__IMG__z_tb12.png" /></div>
-                            <div class="text">
-                                <p class="mb20">薪资 / SALARY</p>你想要的，你期望的，<br />这里都能带给你，努力<br />吧，少年！
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><img src="__IMG__z_tb13.png" /></div>
-                            <div class="text">
-                                <p class="mb20">薪资 / SALARY</p>你想要的，你期望的，<br />这里都能带给你，努力<br />吧，少年！
-                            </div>
-                        </li>
+                        <?php
+                         if($i == 4) break;
+                             ?>
+                        </volist>
                     </ul>
                 </div>
             </div>
