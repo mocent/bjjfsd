@@ -48,7 +48,16 @@ $(function(){
   _resize();
  })
  
-
+// 导航小动画
+    $('.ul>li>a').hover(function(){
+        $(this).children('.index_sp1').animate({'top':'-20px'},200);
+        $(this).children('.index_sp2').animate({'top':'0px'},200);
+        $(this).children('span').children('span').stop(true,false).fadeToggle(200);
+    },function(){
+        $(this).children('.index_sp1').animate({'top':'0px'},200);
+        $(this).children('.index_sp2').animate({'top':'20px'},200);
+        $(this).children('span').children('span').stop(true,false).fadeToggle(200);
+    })
 
  
   var len1=light_indextop.length;

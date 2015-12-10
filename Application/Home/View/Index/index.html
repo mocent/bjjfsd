@@ -83,9 +83,9 @@
                     <img src="__IMG__logo2.png" height="76" class="logo1" title="{:C('WEB_SITE_TITLE')}">
                 </a>
                 <ul class="ul fix">
-                    <li class="fl"><a href="./" class="xz">首 页</a></li>
+                    <li class="fl"><a href="./" class="xz"><span class="index_sp1"><span>首 页</span></span><span class="index_sp2"><span>首 页</span></span></a></li>
         			<volist name="NAVS" id="val">
-                    	<li class="fl"><a href="{$val['url']}" target="_blank" <eq name="val['action']" value="1">class="xz"</eq>>{:msubstr($val['title'],0,2,'utf8','')}</a></li>
+                    	<li class="fl"><a href="{$val['url']}" target="_blank" <eq name="val['action']" value="1">class="xz"</eq>><span class="index_sp1"><span>{:msubstr($val['title'],0,2,'utf8','')}</span></span><span class="index_sp2"><span>{:msubstr($val['title'],0,2,'utf8','')}</span></span></a></li>
         			</volist>
                 </ul>
             </nav>

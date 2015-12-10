@@ -171,9 +171,13 @@ body{overflow-x:hidden;}
     -o-transition:color .3s ease-in-out;
     transition:color .3s ease-in-out;
 }
-.ul>li{padding:0px 20px;height:40px;line-height:40px;}
+.ul>li{height:40px;line-height:40px;width:70px;text-align: center;position: relative;}
 .ul>li>a.xz{color:#c5a47e;}
 .ul>li>a:hover{color:#c5a47e;}
+
+.ul>li>a>span{position: absolute;top:0px;left:0px;}
+.ul>li>a>span.index_sp2{top:20px;}
+.ul>li>a>span.index_sp2 span{display: none;}
 /*footer*/
 .footer{background:#2a2a2a;font-family:"微软雅黑";z-index:1111111;}
 
