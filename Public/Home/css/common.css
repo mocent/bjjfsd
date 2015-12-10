@@ -175,7 +175,7 @@ body{overflow-x:hidden;}
 .ul>li>a.xz{color:#c5a47e;}
 .ul>li>a:hover{color:#c5a47e;}
 /*footer*/
-.footer{background:#2a2a2a;font-family:"微软雅黑";}
+.footer{background:#2a2a2a;font-family:"微软雅黑";z-index:1111111;}
 
 .footertop{background:url(../images/hengxian.png) repeat-x bottom;}
 .footertop1{padding:25px 0px;}
