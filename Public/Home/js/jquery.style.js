@@ -24,17 +24,41 @@ $(document).ready(function(){
     //-----------------W.
     //联系我们搜索
     y_select($(".y_select"));
+    var dingwei1=-2478;
+    var ii=0;
+    var timer=null;
     $('.y_ul1 > li').hover(function(){
+
         $(this).addClass('xz');
         //$(this).stop(true,false).animate({'marginTop':0},700);
-        $(this).find('.y_ol1').stop(true,false).show();
+        $(this).find('.dwxl').stop(true,false).fadeIn(400);
+        $('.dwxjdiv1,.dwxjbj').stop(true,false).fadeIn(400);
+        var i=$(this).index();
+        var dingwei2=dingwei1+i*300;
+        if(ii==0){
+            $('.dwxjbj').css({'left':dingwei2+'px'});
+            
+            ii=1;
+        }
+        else{
+            $('.dwxjbj').animate({'left':dingwei2+'px'},400);
+        }
+        clearTimeout(timer);
+        
+        
     },function(){
         //$(this).stop(true,false).animate({'marginTop':180},700);
-        $(this).find('.y_ol1').stop(true,false).hide();
+        $(this).find('.dwxl').stop(true,false).stop(true,false).fadeOut();
+        $('.dwxjdiv1,.dwxjbj').fadeOut();
         var index=$(this).index();
         setTimeout(function(){
             $(".y_ul1 > li").eq(index).removeClass('xz');
         },100)
+    })
+    $('.dwxjdiv').mouseout(function(){
+        timer=setTimeout(function(){
+            ii=0;
+        },1000)
     })
 
 
