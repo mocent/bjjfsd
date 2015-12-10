@@ -11,12 +11,65 @@
     <script type="text/javascript" src="__JS__jquery.rollbar.min.js"></script>
     <script src="__JS__jquery.style.js"></script>
     <script type="text/javascript">
-        var Tool = {};
         $(document).ready(function() {
+            //var $mlNav = $('.z-mod13');
             $('#dowebok').fullpage({
                 anchors: ['page1', 'page2', 'page3', 'page4','page5'],
-                menu: '#special-menu'
-            });
+                menu: '#special-menu',
+                verticalCentered: !1,
+                onLeave: function(index, nextIndex, direction){
+                    var leavingSection = $(this);
+                    
+                    //after leaving section 2
+                    
+                    if(index == 4 && direction =='down'){
+                        if($('.footer').hasClass('xz')){
+                            return false;
+                        }
+                        else{
+                            $('.footer').addClass('xz');
+                            $('.light_ts').animate({'margin-top':'-367px'},500);
+                            $('.footer').animate({bottom:'0px'},500);
+                            return false; 
+                        }
+                        
+                    }
+                    else if(index == 4 && direction == 'up'){
+                        if($('.footer').hasClass('xz')){
+
+                            $('.light_ts').animate({'margin-top':'0px'},500);
+                            $('.footer').animate({bottom:'-380px'},500,function(){
+                                $('.footer').removeClass('xz');
+                            });
+                            return false;
+                        }
+
+                       
+                    }
+                }
+                //onLeave: function(index, nextIndex, direction){
+                    //if(index == 1 && direction == 'down'){
+                        //$mlNav.animate({
+                            //marginLeft:200
+                        //}, 680);
+                    //} else if (index == 2 && direction == 'up') {
+                        //$mlNav.animate({
+                            //marginLeft:0
+                        //}, 680);
+                    //}
+                    //else if (index == 2 && direction == 'down') {
+                        //$mlNav.animate({
+                            //marginLeft:0
+                        //}, 680);
+                    //}
+                    //else if (index == 3 && direction == 'up') {
+                        //$mlNav.animate({
+                            //marginLeft:200
+                        //}, 680);
+                    //}
+                //}
+            })
+            //滚动条
             $('#example').rollbar({zIndex:80});
         });
     </script>
@@ -29,7 +82,7 @@
         <li data-menuanchor="page4"><a href="#page4">&nbsp;</a></li>
         <!--<li data-menuanchor="page6"><a href="#page6">&nbsp;</a></li>-->
     </ul>
-    <div id="dowebok">
+    <div id="dowebok" class="dowebok1">
         <div class="section recruitment-01">
             <div class="recruitment-bg"></div>
             <div class="center-wrap fix">
@@ -98,23 +151,27 @@
         </div>
         <div class="section recruitment-04">
             <div class="center-wrap">
-                <div class="z-mod16 tc mb70">
-                    <p><span>联系我们</span></p>
-                    <p>在这里，一群兄弟姐妹等你加入</p>
-                </div>
-                <div class="z-mod17">
-                    <ul class="fix">
-					<volist name=":get_lists(20)" id="val">
-                        <li>
-                            <a href="javascript:void(0);"><p class="mb20">{$val['title']}</p>联系电话：{$val['extends']['field_1']}<br />邮箱：{$val['extends']['field_2']}<br />地址：{$val['extends']['field_3']}</a>
-                        </li>
-					</volist>
-                    </ul>
+                <div class="light_ts">
+                    <div class="z-mod16 tc mb70">
+                        <p><span>联系我们</span></p>
+                        <p>在这里，一群兄弟姐妹等你加入</p>
+                    </div>
+
+                    <div class="z-mod17">
+                        <ul class="fix">
+    					<volist name=":get_lists(20)" id="val">
+                            <li>
+                                <a href="javascript:void(0);"><p class="mb20">{$val['title']}</p>联系电话：{$val['extends']['field_1']}<br />邮箱：{$val['extends']['field_2']}<br />地址：{$val['extends']['field_3']}</a>
+                            </li>
+    					</volist>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="section fp-auto-height">
             <include file="Public/footer" />
+        </div>
+        <div class="section fp-auto-height" style="min-height:1px;">
+            
         </div>
     </div>
     <div class="dialog" id="InBg">
